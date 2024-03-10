@@ -17,7 +17,6 @@ public class Administrativo {
         this.nombre = nombre;
         this.sueldo = sueldo;
         this.telefono = telefono;
-        presentacion();
     }
 
 //    03. SETTERS & GETTERS
@@ -49,11 +48,16 @@ public class Administrativo {
 //    04. METHODS
 
     public void presentacion() {
-        System.out.printf("Nombre: %s\nSueldo: %d\nTeléfono: %d",this.getNombre(), this.getSueldo(), this.getTelefono());
+        System.out.printf("Nombre: %s\nSueldo: %d\nTeléfono: %d\n\n",this.getNombre(), this.getSueldo(), this.getTelefono());
     }
 
-    public void presentacionYComparacionSueldo() {
-        System.out.println();
+    public void compararSueldos(Administrativo admin2) {
+        if (sueldo > admin2.sueldo) {
+            System.out.printf("Sueldo %s: %d\nSueldo %s: %d\nEl administrativo %s gana más que %s.", nombre, sueldo, admin2.nombre, admin2.sueldo, nombre, admin2.nombre);
+        }
+        else {
+            System.out.printf("Sueldo %s: %d\nSueldo %s: %d\nEl administrativo %s gana más que %s.", admin2.nombre, admin2.sueldo, nombre, sueldo, admin2.nombre, nombre);
+        }
     }
 
 }

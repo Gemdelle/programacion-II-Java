@@ -1,9 +1,7 @@
 public class Socio {
 //    01. ATTRIBUTES
     String nombre;
-
     int numero;
-
     static int proximoNumero = 1;
 
 //    02. SETTERS & GETTERS
@@ -21,11 +19,6 @@ public class Socio {
 
     public int getNumero() {
         return numero;
-    }
-
-    //    03. METHODS
-    public void aumentarNumero() {
-        proximoNumero += 1;
     }
 
 //    04. CONSTRUCTOR
