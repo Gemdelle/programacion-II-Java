@@ -14,18 +14,18 @@ public class Factura {
     int numero_articulo;
     String descripcion;
     int cantidad_a_comprar;
-    int precio;
+    double precio;
 
-//    02. CONSTRUCTOR
-public Factura(int numero_factura, int numero_articulo, String descripcion, int cantidad_a_comprar, int precio) {
-    this.numero_factura = numero_factura;
-    this.numero_articulo = numero_articulo;
-    this.descripcion = descripcion;
-    this.cantidad_a_comprar = cantidad_a_comprar;
-    this.precio = precio;
-}
+    //    02. CONSTRUCTOR
+    public Factura(int numero_factura, int numero_articulo, String descripcion, int cantidad_a_comprar, double precio) {
+        this.numero_factura = numero_factura;
+        this.numero_articulo = numero_articulo;
+        this.descripcion = descripcion;
+        this.cantidad_a_comprar = cantidad_a_comprar;
+        this.precio = precio;
+    }
 
-// 03. SETTERS & GETTERS
+    // 03. SETTERS & GETTERS
     public int getNumero_factura() {
         return numero_factura;
     }
@@ -58,7 +58,7 @@ public Factura(int numero_factura, int numero_articulo, String descripcion, int 
         this.cantidad_a_comprar = cantidad_a_comprar;
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
@@ -68,8 +68,17 @@ public Factura(int numero_factura, int numero_articulo, String descripcion, int 
 
 //    04. METHODS
 
-    public double obtenerMontoFactura(int cantidad_a_comprar, int precio) {
-    double monto = cantidad_a_comprar * precio;
-    return monto;
+    public void obtenerMontoFactura(int cantidad_a_comprar, double precio) {
+
+        if (cantidad_a_comprar == 0) {
+            int monto_int = 0;
+            System.out.printf("El monto para la factura %d es de %d\n", numero_factura, monto_int);
+        } else if (precio == 0.0) {
+            double monto_double = 0.0;
+            System.out.printf("El monto para la factura %d es de %.2f\n", numero_factura, monto_double);
+        } else {
+            double monto = cantidad_a_comprar * precio;
+            System.out.printf("El monto para la factura %d es de %.2f\n", numero_factura, monto);
+        }
     }
 }
