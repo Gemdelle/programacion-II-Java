@@ -8,6 +8,12 @@
 
 public class Main {
     public static void main(String[] args) {
+        Fecha fecha1 = new Fecha(1,4,2021);
+        Fecha fecha2 = new Fecha("September",1,1998);
+        Fecha fecha3 = new Fecha(12,"26",1990);
 
+        fecha1.mostrarFecha();
+        fecha2.mostrarFecha();
+        fecha3.mostrarFecha();
     }
 }
