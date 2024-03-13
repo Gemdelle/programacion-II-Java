@@ -52,15 +52,16 @@ public class Vendedor {
         double precio_computadora = 13150.89;
         double precio_auriculares = 6899.954;
 
-        double ganancias_lunes = saldo_inicial + auriculares_vendidos_lunes * precio_auriculares + tablets_vendidas_lunes * precio_tablet + computadoras_vendidas_lunes * precio_computadora;
-        double ganancias_martes = saldo_inicial + auriculares_vendidos_martes * precio_auriculares + tablets_vendidas_martes * precio_tablet + computadoras_vendidas_martes * precio_computadora;
-        double ganancias_miercoles = saldo_inicial + auriculares_vendidos_miercoles * precio_auriculares + tablets_vendidas_miercoles * precio_tablet + computadoras_vendidas_miercoles * precio_computadora;
-        double ganancias_jueves = saldo_inicial + auriculares_vendidos_jueves * precio_auriculares + tablets_vendidas_jueves * precio_tablet + computadoras_vendidas_jueves * precio_computadora;
-        double ganancias_viernes = saldo_inicial + auriculares_vendidos_viernes * precio_auriculares + tablets_vendidas_viernes * precio_tablet + computadoras_vendidas_viernes * precio_computadora;
+        double ganancias_lunes = saldo_inicial + (auriculares_vendidos_lunes * precio_auriculares + tablets_vendidas_lunes * precio_tablet + computadoras_vendidas_lunes * precio_computadora) * 0.06;
+        double ganancias_martes = saldo_inicial + (auriculares_vendidos_martes * precio_auriculares + tablets_vendidas_martes * precio_tablet + computadoras_vendidas_martes * precio_computadora) * 0.06;
+        double ganancias_miercoles = saldo_inicial + (auriculares_vendidos_miercoles * precio_auriculares + tablets_vendidas_miercoles * precio_tablet + computadoras_vendidas_miercoles * precio_computadora) * 0.06;
+        double ganancias_jueves = saldo_inicial + (auriculares_vendidos_jueves * precio_auriculares + tablets_vendidas_jueves * precio_tablet + computadoras_vendidas_jueves * precio_computadora) * 0.06;
+        double ganancias_viernes = saldo_inicial + (auriculares_vendidos_viernes * precio_auriculares + tablets_vendidas_viernes * precio_tablet + computadoras_vendidas_viernes * precio_computadora) * 0.06;
 
         double[] ganancias = {ganancias_lunes,ganancias_martes,ganancias_miercoles,ganancias_jueves,ganancias_viernes};
         String[] dias = {"lunes","martes","miercoles","jueves","viernes"};
 
+        System.out.printf("\nGanancias de Vendedor %s\n",nombre);
         for(int i = 0;i<ganancias.length;i++) {
             System.out.printf("Ganancia %s: %.2f\n",dias[i],ganancias[i]);
         }

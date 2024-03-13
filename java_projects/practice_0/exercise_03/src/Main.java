@@ -7,8 +7,13 @@ public class Main {
     public static void main(String[] args) {
         Vendedor vendedor1 = new Vendedor("Ro",1,2,3,2,1,2,5,4,3,2,1,2,3,5,6,5);
 
-        System.out.println(vendedor1.nombre);
-
         vendedor1.calcularIngreso(1,1,1,0,0,0,2,2,2,1,1,1,0,0,0);
+
+        double precio_tablet = 9129.753;
+        double precio_computadora = 13150.89;
+        double precio_auriculares = 6899.954;
+        double ganancia = 2000 + (precio_tablet+precio_computadora+precio_auriculares)*0.06;
+
+        System.out.println("\nValor calculado en consola (lunes): ganancia = " + ganancia);
     }
 }
