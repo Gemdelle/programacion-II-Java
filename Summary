@@ -9,3 +9,10 @@ for (DVD dvd : listaDVDs) {
 
 Keymap
 - reformat Code -> Command + Option + L
+
+Access
+01. ATTRIBUTES - private 
+02. CONSTRUCTOR - public
+03. SETTERS & GETTERS - public
+04. PUBLIC METHODS
+05. PRIVATE METHODS

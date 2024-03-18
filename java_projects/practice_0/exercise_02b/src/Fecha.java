@@ -10,10 +10,10 @@ import java.time.Month;
 
 public class Fecha {
 
-    //    01. VARIABLES
-    int mes;
-    int dia;
-    int anio;
+    //    01. ATTRIBUTES
+    private int mes;
+    private int dia;
+    private int anio;
 
     //    02. CONSTRUCTORS
 // 01. int - int - int
@@ -70,20 +70,20 @@ public class Fecha {
     // Proporcione un método mostrarFecha, para Imprimir la fecha en varios formatos, como 05/21/2010; Junio 14, 2012; 20 Agosto 11.
 //    04. METHODS
 
-    public void validacionDatos1(int mes, int dia, int anio) {
+    private void validacionDatos1(int mes, int dia, int anio) {
         if (mes < 1 || mes > 12 || dia < 1 || dia > 31 || anio < 1 || anio > 2024) {
             throw new RuntimeException("Ingrese valores dentro del rango");
         }
     }
 
-    public void validacionDatos2(String mes, int dia, int anio) {
+    private void validacionDatos2(String mes, int dia, int anio) {
         Month valor_mes = Month.valueOf(mes); // Con esto ya se valida si existe o no, si no exist tira error.
         if (dia < 1 || dia > 31 || anio < 1 || anio > 2024) {
             throw new RuntimeException("Ingrese valores dentro del rango");
         }
     }
 
-    public void validacionDatos3(int mes, String dia, int anio) {
+    private void validacionDatos3(int mes, String dia, int anio) {
         int dia_numerico = Integer.parseInt(dia);
         if (mes < 1 || mes > 12 || dia_numerico < 1 || dia_numerico > 31 || anio < 1 || anio > 2024) {
             throw new RuntimeException("Ingrese valores dentro del rango");
