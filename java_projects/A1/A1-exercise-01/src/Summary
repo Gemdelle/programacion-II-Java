@@ -1,0 +1,7 @@
+- iterar array
+- equals
+for (DVD dvd : listaDVDs) {
+            if (dvd.getTitulo().equals(titulo)) {
+                dvd.setComentario(comentario);
+            }
+        }
