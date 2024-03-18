@@ -12,36 +12,36 @@
 public class Factura {
 
     //    01. ATTRIBUTES
-    int numero_factura;
-    int numero_articulo;
-    String descripcion;
-    int cantidad_a_comprar;
-    double precio;
+    private int numeroFactura;
+    private int numeroArticulo;
+    private String descripcion;
+    private int cantidadAComprar;
+    private double precio;
 
     //    02. CONSTRUCTOR
-    public Factura(int numero_factura, int numero_articulo, String descripcion, int cantidad_a_comprar, double precio) {
-        this.numero_factura = numero_factura;
-        this.numero_articulo = numero_articulo;
+    public Factura(int numeroFactura, int numeroArticulo, String descripcion, int cantidadAComprar, double precio) {
+        this.numeroFactura = numeroFactura;
+        this.numeroArticulo = numeroArticulo;
         this.descripcion = descripcion;
-        this.cantidad_a_comprar = cantidad_a_comprar;
+        this.cantidadAComprar = cantidadAComprar;
         this.precio = precio;
     }
 
     // 03. SETTERS & GETTERS
-    public int getNumero_factura() {
-        return numero_factura;
+    public int getNumeroFactura() {
+        return numeroFactura;
     }
 
-    public void setNumero_factura(int numero_factura) {
-        this.numero_factura = numero_factura;
+    public void setNumeroFactura(int numeroFactura) {
+        this.numeroFactura = numeroFactura;
     }
 
-    public int getNumero_articulo() {
-        return numero_articulo;
+    public int getNumeroArticulo() {
+        return numeroArticulo;
     }
 
-    public void setNumero_articulo(int numero_articulo) {
-        this.numero_articulo = numero_articulo;
+    public void setNumeroArticulo(int numeroArticulo) {
+        this.numeroArticulo = numeroArticulo;
     }
 
     public String getDescripcion() {
@@ -52,12 +52,12 @@ public class Factura {
         this.descripcion = descripcion;
     }
 
-    public int getCantidad_a_comprar() {
-        return cantidad_a_comprar;
+    public int getCantidadAComprar() {
+        return cantidadAComprar;
     }
 
-    public void setCantidad_a_comprar(int cantidad_a_comprar) {
-        this.cantidad_a_comprar = cantidad_a_comprar;
+    public void setCantidadAComprar(int cantidadAComprar) {
+        this.cantidadAComprar = cantidadAComprar;
     }
 
     public double getPrecio() {
@@ -71,15 +71,15 @@ public class Factura {
 //    04. METHODS
 
     public void obtenerMontoFactura() {
-        if (cantidad_a_comprar == 0) {
-            int monto_int = 0;
-            System.out.printf("El monto para la factura %d es de %d\n", numero_factura, monto_int);
+        if (cantidadAComprar == 0) {
+            int montoInt = 0;
+            System.out.printf("El monto para la factura %d es de %d\n", numeroFactura, montoInt);
         } else if (precio == 0.0) {
-            double monto_double = 0.0;
-            System.out.printf("El monto para la factura %d es de %.2f\n", numero_factura, monto_double);
+            double montoDouble = 0.0;
+            System.out.printf("El monto para la factura %d es de %.2f\n", numeroFactura, montoDouble);
         } else {
-            double monto = cantidad_a_comprar * precio;
-            System.out.printf("El monto para la factura %d es de %.2f\n", numero_factura, monto);
+            double monto = cantidadAComprar * precio;
+            System.out.printf("El monto para la factura %d es de %.2f\n", numeroFactura, monto);
         }
     }
 }
