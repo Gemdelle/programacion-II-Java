@@ -1,10 +1,16 @@
 public class Socio {
-//    01. ATTRIBUTES
-    String nombre;
-    int numero;
+    //    01. ATTRIBUTES
+    private String nombre;
+    private int numero;
     static int proximoNumero = 1;
 
-//    02. SETTERS & GETTERS
+    //    02. CONSTRUCTOR
+
+    public Socio() {
+        proximoNumero += 1;
+    }
+
+    //    03. SETTERS & GETTERS
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -20,10 +26,5 @@ public class Socio {
     public int getNumero() {
         return numero;
     }
-
-//    04. CONSTRUCTOR
-
-    public Socio() {
-        proximoNumero += 1;
-    }
 }
+

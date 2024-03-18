@@ -56,6 +56,5 @@ public class Main {
 
         System.out.printf("\n\n" + administrativo1.getTelefono() + "\n");
         System.out.printf("El próximo número es %d",Socio.proximoNumero);
-
     }
 }
