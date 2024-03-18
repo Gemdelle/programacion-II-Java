@@ -4,7 +4,7 @@
 //La funcionalidad que queremos que nos brinde el catálogo debe incluir como mínimo lo siguiente:
 //Permitir ingresar información sobre los DVD. (NO ENTIENDO QUÉ SIGNIFICA INGRESAR INFORMACIÓN, NO ES LO MISMO QUE MODIFICAR ATRIBUTOS?)
 //Permitir eliminar un DVD conociendo el título.
-//Permitir modificar los valores de uno o más atributos conociendo el título. (CÓMO MODIFICO MAÁS DE UN VALOR AL MISMO TIEMPO, CÓMO SABE QUÉ VALOR CORRESPONDE A CADA PARÁMETRO EN LA FUNCIÓN SI NO QUIERO PONER TODOS.
+//Permitir modificar los valores de uno o más atributos conociendo el título. (CÓMO MODIFICO MAÁS DE UN VALOR AL MISMO TIEMPO, CÓMO SABE QUÉ VALOR CORRESPONDE A CADA PARÁMETRO EN LA FUNCIÓN SI NO QUIERO PONER TODOS, SE REFIERE A MODIFICAR POR SEPARADO EN DIFERENTES FUNCIONES?.
 
 //Listar:
 //todos los DVD

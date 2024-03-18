@@ -4,6 +4,7 @@
 //        - ejemplo2: crea dos administrativos (usando el ejemplo1) e indica además cuál gana más.
 //        Agregar teléfono en la clase administrativo. Hacer que el método toString lo incluya.
 
+
 public class Administrativo {
 
     //    01. ATTRIBUTES
@@ -14,6 +15,7 @@ public class Administrativo {
 //    02. CONSTRUCTOR
 
     public Administrativo(String nombre, int sueldo, int telefono) {
+
         this.nombre = nombre;
         this.sueldo = sueldo;
         this.telefono = telefono;
