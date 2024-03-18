@@ -8,57 +8,57 @@ public class Vendedor {
     //    01. ATTRIBUTES
     String nombre;
     int numero;
-    int auriculares_vendidos_lunes;
-    int computadoras_vendidas_lunes;
-    int tablets_vendidas_lunes;
-    int auriculares_vendidos_martes;
-    int computadoras_vendidas_martes;
-    int tablets_vendidas_martes;
-    int auriculares_vendidos_miercoles;
-    int computadoras_vendidas_miercoles;
-    int tablets_vendidas_miercoles;
-    int auriculares_vendidos_jueves;
-    int computadoras_vendidas_jueves;
-    int tablets_vendidas_jueves;
-    int auriculares_vendidos_viernes;
-    int computadoras_vendidas_viernes;
-    int tablets_vendidas_viernes;
-    double saldo_inicial = 2000.0;
+    int auricularesVendidosLunes;
+    int computadorasVendidasLunes;
+    int tabletsVendidasLunes;
+    int auricularesVendidosMartes;
+    int computadorasVendidasMartes;
+    int tabletsVendidasMartes;
+    int auricularesVendidosMiercoles;
+    int computadorasVendidasMiercoles;
+    int tabletsVendidasMiercoles;
+    int auricularesVendidosJueves;
+    int computadorasVendidasJueves;
+    int tabletsVendidasJueves;
+    int auricularesVendidosViernes;
+    int computadorasVendidasViernes;
+    int tabletsVendidasViernes;
+    double saldoInicial = 2000.0;
 
     //    02. CONSTRUCTOR
-    public Vendedor(String nombre, int numero, int auriculares_vendidos_lunes, int computadoras_vendidas_lunes, int tablets_vendidas_lunes, int auriculares_vendidos_martes, int computadoras_vendidas_martes, int tablets_vendidas_martes, int auriculares_vendidos_miercoles, int computadoras_vendidas_miercoles, int tablets_vendidas_miercoles, int auriculares_vendidos_jueves, int computadoras_vendidas_jueves, int tablets_vendidas_jueves, int auriculares_vendidos_viernes, int computadoras_vendidas_viernes, int tablets_vendidas_viernes) {
+    public Vendedor(String nombre, int numero, int auricularesVendidosLunes, int computadorasVendidasLunes, int tabletsVendidasLunes, int auricularesVendidosMartes, int computadorasVendidasMartes, int tabletsVendidasMartes, int auricularesVendidosMiercoles, int computadorasVendidasMiercoles, int tabletsVendidasMiercoles, int auricularesVendidosJueves, int computadorasVendidasJueves, int tabletsVendidasJueves, int auricularesVendidosViernes, int computadorasVendidasViernes, int tabletsVendidasViernes) {
         this.nombre = nombre;
         this.numero = numero;
-        this.auriculares_vendidos_lunes = auriculares_vendidos_lunes;
-        this.computadoras_vendidas_lunes = computadoras_vendidas_lunes;
-        this.tablets_vendidas_lunes = tablets_vendidas_lunes;
-        this.auriculares_vendidos_martes = auriculares_vendidos_martes;
-        this.computadoras_vendidas_martes = computadoras_vendidas_martes;
-        this.tablets_vendidas_martes = tablets_vendidas_martes;
-        this.auriculares_vendidos_miercoles = auriculares_vendidos_miercoles;
-        this.computadoras_vendidas_miercoles = computadoras_vendidas_miercoles;
-        this.tablets_vendidas_miercoles = tablets_vendidas_miercoles;
-        this.auriculares_vendidos_jueves = auriculares_vendidos_jueves;
-        this.computadoras_vendidas_jueves = computadoras_vendidas_jueves;
-        this.tablets_vendidas_jueves = tablets_vendidas_jueves;
-        this.auriculares_vendidos_viernes = auriculares_vendidos_viernes;
-        this.computadoras_vendidas_viernes = computadoras_vendidas_viernes;
-        this.tablets_vendidas_viernes = tablets_vendidas_viernes;
+        this.auricularesVendidosLunes = auricularesVendidosLunes;
+        this.computadorasVendidasLunes = computadorasVendidasLunes;
+        this.tabletsVendidasLunes = tabletsVendidasLunes;
+        this.auricularesVendidosMartes = auricularesVendidosMartes;
+        this.computadorasVendidasMartes = computadorasVendidasMartes;
+        this.tabletsVendidasMartes = tabletsVendidasMartes;
+        this.auricularesVendidosMiercoles = auricularesVendidosMiercoles;
+        this.computadorasVendidasMiercoles = computadorasVendidasMiercoles;
+        this.tabletsVendidasMiercoles = tabletsVendidasMiercoles;
+        this.auricularesVendidosJueves = auricularesVendidosJueves;
+        this.computadorasVendidasJueves = computadorasVendidasJueves;
+        this.tabletsVendidasJueves = tabletsVendidasJueves;
+        this.auricularesVendidosViernes = auricularesVendidosViernes;
+        this.computadorasVendidasViernes = computadorasVendidasViernes;
+        this.tabletsVendidasViernes = tabletsVendidasViernes;
     }
 
 //    03. METHODS
-    public void calcularIngreso(int auriculares_vendidos_lunes, int computadoras_vendidas_lunes, int tablets_vendidas_lunes, int auriculares_vendidos_martes, int computadoras_vendidas_martes, int tablets_vendidas_martes, int auriculares_vendidos_miercoles, int computadoras_vendidas_miercoles, int tablets_vendidas_miercoles, int auriculares_vendidos_jueves, int computadoras_vendidas_jueves, int tablets_vendidas_jueves, int auriculares_vendidos_viernes, int computadoras_vendidas_viernes, int tablets_vendidas_viernes) {
-        double precio_tablet = 9129.753;
-        double precio_computadora = 13150.89;
-        double precio_auriculares = 6899.954;
+    public void calcularIngreso() {
+        double precioTablet = 9129.753;
+        double precioComputadora = 13150.89;
+        double precioAuriculares = 6899.954;
 
-        double ganancias_lunes = saldo_inicial + (auriculares_vendidos_lunes * precio_auriculares + tablets_vendidas_lunes * precio_tablet + computadoras_vendidas_lunes * precio_computadora) * 0.06;
-        double ganancias_martes = saldo_inicial + (auriculares_vendidos_martes * precio_auriculares + tablets_vendidas_martes * precio_tablet + computadoras_vendidas_martes * precio_computadora) * 0.06;
-        double ganancias_miercoles = saldo_inicial + (auriculares_vendidos_miercoles * precio_auriculares + tablets_vendidas_miercoles * precio_tablet + computadoras_vendidas_miercoles * precio_computadora) * 0.06;
-        double ganancias_jueves = saldo_inicial + (auriculares_vendidos_jueves * precio_auriculares + tablets_vendidas_jueves * precio_tablet + computadoras_vendidas_jueves * precio_computadora) * 0.06;
-        double ganancias_viernes = saldo_inicial + (auriculares_vendidos_viernes * precio_auriculares + tablets_vendidas_viernes * precio_tablet + computadoras_vendidas_viernes * precio_computadora) * 0.06;
+        double gananciasLunes = saldoInicial + (auricularesVendidosLunes * precioAuriculares + tabletsVendidasLunes * precioTablet + computadorasVendidasLunes * precioComputadora) * 0.06;
+        double gananciasMartes = saldoInicial + (auricularesVendidosMartes * precioAuriculares + tabletsVendidasMartes * precioTablet + computadorasVendidasMartes * precioComputadora) * 0.06;
+        double gananciasMiercoles = saldoInicial + (auricularesVendidosMiercoles * precioAuriculares + tabletsVendidasMiercoles * precioTablet + computadorasVendidasMiercoles * precioComputadora) * 0.06;
+        double gananciasJueves = saldoInicial + (auricularesVendidosJueves * precioAuriculares + tabletsVendidasJueves * precioTablet + computadorasVendidasJueves * precioComputadora) * 0.06;
+        double gananciasViernes = saldoInicial + (auricularesVendidosViernes * precioAuriculares + tabletsVendidasViernes * precioTablet + computadorasVendidasViernes * precioComputadora) * 0.06;
 
-        double[] ganancias = {ganancias_lunes,ganancias_martes,ganancias_miercoles,ganancias_jueves,ganancias_viernes};
+        double[] ganancias = {gananciasLunes, gananciasMartes, gananciasMiercoles,gananciasJueves,gananciasViernes};
         String[] dias = {"lunes","martes","miercoles","jueves","viernes"};
 
         System.out.printf("\nGanancias de Vendedor %s\n",nombre);
