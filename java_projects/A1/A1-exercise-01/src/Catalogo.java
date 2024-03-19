@@ -1,8 +1,10 @@
 import java.util.List;
 import java.util.Objects;
 
-// POR QUÉ HAY QUE PONER BREAK PARA QUE ANDE? 29
-// por qué no se puede hacer dvd.obtenido = estado 49
+/*
+ * La clase Catalogo implementa la lógica necesaria para acceder y modificar los DVDs que son de interés para el usuario.
+ * @author Gemdelle
+ */
 
 public class Catalogo {
 
@@ -15,7 +17,9 @@ public class Catalogo {
     }
 
     // 03. METHODS
-    public void agregadDVD(DVD dvd) {
+    /*
+    * */
+    public void agregardDVD(DVD dvd) {
         listaDVDs.add(dvd);
     }
 
