@@ -1,4 +1,3 @@
-import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -8,7 +7,7 @@ import java.util.Objects;
 public class Catalogo {
 
     //    01. ATTRIBUTES
-    private List<DVD> listaDVDs;
+    private final List<DVD> listaDVDs;
 
     //    02. CONSTRUCTOR
     public Catalogo(List<DVD> listaDVDs) {
@@ -21,39 +20,26 @@ public class Catalogo {
     }
 
     public void eliminarDVD(String titulo) {
-        System.out.printf("Se ha eliminado el DVD %s", titulo);
+        System.out.printf("Se ha eliminado el DVD %s\n", titulo);
+        listaDVDs.removeIf(dvd -> dvd.getTitulo().equals(titulo));
 
-//        FORMA 1
-        // Iterar sobre la lista de DVDs
-        for (DVD dvd : listaDVDs) {
-            // Verificar si el título del DVD coincide con el título proporcionado
-            if (dvd.getTitulo().equals(titulo)) {
-                // Si coincide, eliminar el DVD de la lista y salir del bucle
-                listaDVDs.remove(dvd);
-                break; // POR QUÉ HAY QUE PONER BREAK PARA QUE ANDE?
-            }
-
-//        FORMA 2
-//            listaDVDs.removeIf(dvd -> dvd.getTitulo().equals(titulo));
-        }
     }
 
     public void modificarObtenido(String titulo, String estado) {
-        System.out.printf("Modificar estado de obtención de %s\n",titulo);
+        System.out.printf("Modificar estado de obtención de %s\n", titulo);
         for (DVD dvd : listaDVDs) {
             if (dvd.getTitulo().equals(titulo)) {
                 if (Objects.equals(estado, "no")) {
-                    dvd.setObtenido(false); // por qué no se puede hacer dvd.obtenido = estado
-                } else {
+                    dvd.setObtenido(false);
+                } else if (Objects.equals(estado, "si")) {
                     dvd.setObtenido(true);
                 }
-
             }
         }
     }
 
     public void modificarComentario(String titulo, String comentario) {
-        System.out.printf("Modificar comentario de obtención de %s\n",titulo);
+        System.out.printf("Modificar comentario de %s\n", titulo);
         for (DVD dvd : listaDVDs) {
             if (dvd.getTitulo().equals(titulo)) {
                 dvd.setComentario(comentario);
@@ -112,7 +98,7 @@ public class Catalogo {
 
     //    INFORMAR
     public void contarDVD() {
-        System.out.printf("Cantidad total de DVDs: %d\n",listaDVDs.size());
+        System.out.printf("Cantidad total de DVDs: %d\n", listaDVDs.size());
     }
 
     public void contarDVDObtenidos() {

@@ -49,7 +49,6 @@ public DVD(String titulo, String genero, int duracion, boolean obtenido, String 
     public void setObtenido(boolean obtenido) {
         this.obtenido = obtenido;
     }
-
     public String getComentario() {
         return comentario;
     }
