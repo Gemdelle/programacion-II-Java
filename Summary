@@ -10,9 +10,61 @@ for (DVD dvd : listaDVDs) {
 Keymap
 - reformat Code -> Command + Option + L
 
+-------------------------------------------------------------------------------------------------------------
+
 Access
 01. ATTRIBUTES - private 
 02. CONSTRUCTOR - public
 03. SETTERS & GETTERS - public
 04. PUBLIC METHODS
 05. PRIVATE METHODS
+
+-------------------------------------------------------------------------------------------------------------
+
+ARRAYS
+int vec [] = new int [10]; 
+Esta primera parte es en tiempo de compilación.
+La segunda es en tiempo de ejecución.
+Hay que definir cuánto espacio va a tener el array, si queda chico después se pide más. 
+
+ALARGAR array
+vec = new int [100] -> esto reemplaza ahora el vec anterior, que se saca del espacio en donde estaba guardado en memoria. 
+
+int vec = {1,2,3,4};
+int aux [] = new int [vec.length * 2];
+
+Para agregar los datos que estaban en vec a aun
+for(int i = 0;i<vec.length;i++) {
+aux[i] = vec[i]
+}
+vec = aux; 
+
+Si son objetos, hay que crearlos y después se pueden guardar en el array.
+Alumno curso[] = new Alumno[30]
+curso[i] = new Alumno(...);
+
+STATIC VOID MAIN
+int a[], b[], c[];
+a = new int[10]
+int[] a,b,c; -> acá los 3 ya son del mismo tipo.
+
+MATRICES
+int mat[][] = {{1,2,3},{4,5,6},{7,8,9}};
+		fila0   fila1  fila2
+
+mat[1][1] -> 5
+mat[2][0] -> 7
+mat[0] -> toda la fila 0
+
+ARRAY irregular, =/= n de filas y columnas
+int mat[][] = new mat[3][3];
+for(int i=0 ; i<mat.length ; i++) { -> acá se agarra mat.length porque por default se agarra el primer [], las filas.
+	for(int j=0 ; j < mat[0].length < j++) {
+		mat[i][j] = i+j;
+	}	
+}
+
+EJERCICIO DVD
+Para crear la lista, en clase pusimos
+ArrayList <Alumno> curso = new ArrayList <Alumno>();
+curso.size() -> tamaño USADO, no es tamaño DISPONIBLE ya que las listas no se declaran con el tamaño final que van a tener.

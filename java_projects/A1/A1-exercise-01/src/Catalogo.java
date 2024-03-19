@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.Objects;
 
 /*
- * La clase Catalogo implementa la lógica necesaria para acceder y modificar los DVDs que son de interés para el usuario.
+ * La clase Catalogo implementa la lógica necesaria para acceder y modificar los DVDs {@link DVD} que son de interés para el usuario.
  * @author Gemdelle
  */
 
@@ -18,7 +18,12 @@ public class Catalogo {
 
     // 03. METHODS
     /*
-    * */
+     * @param dvd el dvd a agregar al catálogo
+     */
+
+//    FUNCIÓN PARA IMPRIMIR LA INFORMACIÓN DE LA CLASE POR DEFAULT SIN GETTERS + PRINT
+
+
     public void agregardDVD(DVD dvd) {
         listaDVDs.add(dvd);
     }
@@ -115,4 +120,12 @@ public class Catalogo {
         System.out.printf("Cantidad de DVDs obtenidos: %d\n", obtenidos);
     }
 }
+
+/**
+ * @return
+ */
+//    public String toString() {
+//        return this.dvd.titulo;
+//    }
+//}
 

@@ -38,12 +38,12 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("");
 
-        DVD dvd1 = new DVD("Casper","Horror",120,false,"Buena","Sean McNamara");
-        DVD dvd2 = new DVD("El Laberinto del Fauno","Ciencia ficción",140,true,"Excelente","Guillermo del Toro");
-        DVD dvd3 = new DVD("El Viaje de Chihiro","Anime",125,true,"Excelente","Studio Ghibli");
-        DVD dvd4 = new DVD("El Castillo Vagabundo","Anime",160,true,"Excelente","Studio Ghibli");
-        DVD dvd5 = new DVD("El hombre mosca","Ciencia ficción",70,false,"Regular","Sam Taylor");
-        DVD dvd6 = new DVD("La Historia sin Fin","Ciencia ficción",94,false,"Excelente","Wolfgang Petersen");
+        DVD dvd1 = new DVD("Casper", "Horror", 120, false, "Buena", "Sean McNamara");
+        DVD dvd2 = new DVD("El Laberinto del Fauno", "Ciencia ficción", 140, true, "Excelente", "Guillermo del Toro");
+        DVD dvd3 = new DVD("El Viaje de Chihiro", "Anime", 125, true, "Excelente", "Studio Ghibli");
+        DVD dvd4 = new DVD("El Castillo Vagabundo", "Anime", 160, true, "Excelente", "Studio Ghibli");
+        DVD dvd5 = new DVD("El hombre mosca", "Ciencia ficción", 70, false, "Regular", "Sam Taylor");
+        DVD dvd6 = new DVD("La Historia sin Fin", "Ciencia ficción", 94, false, "Excelente", "Wolfgang Petersen");
 
 //        DVD
         System.out.println("----------FUNCIONES DVD----------");
@@ -73,13 +73,13 @@ public class Main {
         catalogo.listarTodosDVD();
 
 //        modificar obtenido y comentario por tiítulo de DVD
-        System.out.printf("Estado inicial de obtención: %s\n",dvd1.isObtenido());
-        catalogo.modificarObtenido("Casper, el fantasma","si");
-        System.out.printf("Estado final de obtención: %s\n",dvd1.isObtenido());
+        System.out.printf("Estado inicial de obtención: %s\n", dvd1.isObtenido());
+        catalogo.modificarObtenido("Casper, el fantasma", "si");
+        System.out.printf("Estado final de obtención: %s\n", dvd1.isObtenido());
 
-        System.out.printf("\nComentario inicial: %s\n",dvd1.getComentario());
-        catalogo.modificarComentario("Casper, el fantasma","Regular");
-        System.out.printf("Comentario final: %s\n\n",dvd1.getComentario());
+        System.out.printf("\nComentario inicial: %s\n", dvd1.getComentario());
+        catalogo.modificarComentario("Casper, el fantasma", "Regular");
+        System.out.printf("Comentario final: %s\n\n", dvd1.getComentario());
 
 //        listar
         catalogo.listarTodosDVD();
@@ -88,8 +88,9 @@ public class Main {
         catalogo.listarDVDDirector("Studio Ghibli");
         catalogo.listarDVDAlfabetico();
 
-//        informar
-        catalogo.contarDVD();
-        catalogo.contarDVDObtenidos();
+////        informar
+//        catalogo.contarDVD();
+//        catalogo.contarDVDObtenidos();
+//    }
     }
 }
