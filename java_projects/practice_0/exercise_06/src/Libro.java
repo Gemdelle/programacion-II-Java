@@ -1,8 +1,8 @@
 public class Libro {
 //    01. ATTRIBUTES
-    String titulo;
-    boolean original;
-    boolean prestable;
+    private String titulo;
+    private boolean original;
+    private boolean prestable;
 
 //    02. CONSTRUCTOR
 public Libro(String titulo, boolean original, boolean prestable) {

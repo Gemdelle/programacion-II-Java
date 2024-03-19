@@ -28,8 +28,20 @@ public class CatalogoDVD {
                     dvd.setObtenido(false);
                 } else if (Objects.equals(estado, "si")) {
                     dvd.setObtenido(true);
+                } else {
+                    System.out.println("Ingrese el valor <si> o <no> en el campo obtenido.");
                 }
             }
         }
     }
+
+    public void modificarComentario(String titulo, String comentario) {
+        for(DVD dvd : listaDVDs) {
+            if(Objects.equals(dvd.getTitulo(),titulo)) {
+                dvd.setComentario(comentario);
+            }
+        }
+    }
+
+
 }
