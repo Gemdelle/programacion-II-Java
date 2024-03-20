@@ -15,11 +15,11 @@ public class Main {
     CuentaDeAhorros ahorrador2 = new CuentaDeAhorros(30000);
 
 //    CuentaDeAhorros.setTasaInteresAnual(0.04F); Puede hacerse así o con el método que me pide en el enunciado, es lo mismo o no?
-        ahorrador1.modificarTasaInteres(0.04F);
+        CuentaDeAhorros.modificarTasaInteres(0.04F);
     ahorrador1.calcularlnteresMensual(12);
     ahorrador2.calcularlnteresMensual(12);
 
-        ahorrador1.modificarTasaInteres(0.05F);
+        CuentaDeAhorros.modificarTasaInteres(0.05F);
     ahorrador1.calcularlnteresMensual(1);
     ahorrador2.calcularlnteresMensual(1);
 

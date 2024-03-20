@@ -41,7 +41,7 @@ public class CuentaDeAhorros {
     }
 
     // Proporcione un método static llamado modificar Tasalnteres para establecer la tasalnteresAnual en un nuevo valor.
-    public void modificarTasaInteres(float tasaInteres)
+    public static void modificarTasaInteres(float tasaInteres)
     {
         CuentaDeAhorros.tasaInteresAnual = tasaInteres;
     }
