@@ -20,9 +20,9 @@ public class Vendedor {
 
         Random random = new Random(); // nextInt(5) -> va a devolver 5 posiciones, pero le suma 1 al resultado para que el 0 sea 1.
         int cantidadNotas = 0;
-        // CREAR VARIABLE PARA QUE DE ESA CANTIDAD DE NOTAS EL PRODUCTO SEA RANDOM ENTRE 1 Y 5
+        // CREAR VARIABLE PARA QUE EL PRODUCTO SEA RANDOM ENTRE 1 Y 5
 
-        int ganancia = random.nextInt(3000) + 500; // 500 - 2500
+        int ganancia = random.nextInt(3000) + 500; // 500 - 3500
 
         for (int i = 0; i < dias; i++)
         { // para cada día del mes
