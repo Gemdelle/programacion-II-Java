@@ -89,8 +89,8 @@ public class Main {
         catalogo.listarDVDAlfabetico();
 
 ////        informar
-//        catalogo.contarDVD();
-//        catalogo.contarDVDObtenidos();
+        catalogo.contarDVD();
+        catalogo.contarDVDObtenidos();
 //    }
     }
 }
