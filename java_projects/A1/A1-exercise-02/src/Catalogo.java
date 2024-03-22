@@ -11,6 +11,7 @@ public class Catalogo {
 
     //    01. ATTRIBUTES
     private final List<DVD> listaDVDs;
+    private boolean systemOnline = true;
 
     //    02. CONSTRUCTOR
     public Catalogo(List<DVD> listaDVDs) {
@@ -34,7 +35,7 @@ public class Catalogo {
         System.out.println("Introduzca la duración: ");
         int duracion = scanner.nextInt();
         System.out.println("Introduzca el estado de obtención [true/false]: ");
-        Boolean obtenido = scanner.nextBoolean();
+        boolean obtenido = scanner.nextBoolean();
         System.out.println("Introduzca comentario: ");
         String comentario = scanner.next();
         System.out.println("Introduzca el director: ");
@@ -56,6 +57,8 @@ public class Catalogo {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Introduzca el título del DVD a modificar estado de obtención: ");
         String titulo = scanner.next();
+        System.out.println("Introduzca el nuevo estado de obtención [si/no]: ");
+        String estado = scanner.next();
         for (DVD dvd : listaDVDs) {
             if (dvd.getTitulo().equals(titulo)) {
                 if (Objects.equals(estado, "no")) {
@@ -68,13 +71,18 @@ public class Catalogo {
         scanner.close();
     }
 
-    public void modificarComentario(String titulo, String comentario) {
-        System.out.printf("Modificar comentario de %s\n", titulo);
+    public void modificarComentario() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduzca el título del DVD a modificar comentario: ");
+        String titulo = scanner.next();
+        System.out.println("Introduzca el comentario del DVD a modificar: ");
+        String comentario = scanner.next();
         for (DVD dvd : listaDVDs) {
             if (dvd.getTitulo().equals(titulo)) {
                 dvd.setComentario(comentario);
             }
         }
+        scanner.close();
     }
 
     //    LISTADO
@@ -96,24 +104,30 @@ public class Catalogo {
         System.out.println("\n");
     }
 
-    public void listarDVDTiempoMenor(int tiempo) {
-        System.out.printf("Listado de DVDs con duración menor a %d\n", tiempo);
+    public void listarDVDTiempoMenor() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduzca el tiempo de los DVD a listar: ");
+        int tiempo = scanner.nextInt();
         for (DVD dvd : listaDVDs) {
             if (dvd.getDuracion() < tiempo) {
                 System.out.printf("Título: %s / Duración: %d\n", dvd.getTitulo(), dvd.getDuracion());
             }
         }
         System.out.println("\n");
+        scanner.close();
     }
 
-    public void listarDVDDirector(String director) {
-        System.out.printf("Listado de DVDs con director %s\n", director);
+    public void listarDVDDirector() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduzca el director de los DVD a listar: ");
+        String director = scanner.next();
         for (DVD dvd : listaDVDs) {
             if (Objects.equals(dvd.getDirector(), director)) {
                 System.out.println(dvd.getTitulo());
             }
         }
         System.out.println("\n");
+        scanner.close();
     }
 
     public void listarDVDAlfabetico() {
@@ -142,43 +156,32 @@ public class Catalogo {
     }
 
     public void interfazUsuario() {
-        System.out.println("----------------------------- CATÁLOGO DVDs -----------------------------");
-        System.out.println("ACCIONES\n[1] Agregar DVD\n[2] Eliminar DVD\n[3] Modificar estado obtenido\n[4] Modificar un comentario\n[5] Listar todos los DVDs\n[6] Listar los DVDs obtenidos\n[7] Listar los DVDs menores a una determinada duración\n[8] Listar DVDs por director\n[9] Listar DVDs de manera alfabética\n[10] Contar todos los DVDs\n[11] Contar DVDs obtenidos\n¿Qué acción desea realizar?: ");
-        Scanner scanner = new Scanner(System.in);
-        int input = scanner.nextInt();
-        switch (input) {
-            case 1:
-                agregarDVD();
-                break;
-//            case 2:
-//                eliminarDVD();
-//                break;
-//            case 3:
-//                modificarObtenido();
-//                break;
-//            case 4:
-//                modificarComentario();
-//                break;
-//            case 5:
-//                listarTodosDVD();
-//                break;
-//            case 6:
-//                listarDVDObtenidos();
-//                break;
-//            case 7:
-//                listarDVDTiempoMenor();
-//                break;
-//            case 8:
-//                listarDVDDirector();
-//                break;
-//            case 9:
-//                listarDVDAlfabetico();
-//                break;
-//            case 10:
-//                contarDVD();
-//            default:
-//                contarDVDObtenidos();
+        while (systemOnline) {
+            System.out.println("----------------------------- CATÁLOGO DVDs -----------------------------");
+            System.out.println("ACCIONES\n[1] Agregar DVD\n[2] Eliminar DVD\n[3] Modificar estado obtenido\n[4] Modificar un comentario\n[5] Listar todos los DVDs\n[6] Listar los DVDs obtenidos\n[7] Listar los DVDs menores a una determinada duración\n[8] Listar DVDs por director\n[9] Listar DVDs de manera alfabética\n[10] Contar todos los DVDs\n[11] Contar DVDs obtenidos\n[12] Salir\n¿Qué acción desea realizar?: ");
+            Scanner scanner = new Scanner(System.in);
+            int input = scanner.nextInt();
+            switch (input) {
+                case 1 -> agregarDVD();
+                case 2 -> eliminarDVD();
+                case 3 -> modificarObtenido();
+                case 4 -> modificarComentario();
+                case 5 -> listarTodosDVD();
+                case 6 -> listarDVDObtenidos();
+                case 7 -> listarDVDTiempoMenor();
+                case 8 -> listarDVDDirector();
+                case 9 -> listarDVDAlfabetico();
+                case 10 -> contarDVD();
+                case 11 -> contarDVDObtenidos();
+                case 12 -> {
+                    scanner.close();
+                    systemOnline = false;
+                }
+                default -> {
+                }
+            }
         }
+
     }
 }
 
