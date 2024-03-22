@@ -24,7 +24,7 @@ public class Catalogo {
 //    FUNCIÓN PARA IMPRIMIR LA INFORMACIÓN DE LA CLASE POR DEFAULT SIN GETTERS + PRINT
 
 
-    public void agregardDVD(DVD dvd) {
+    public void agregarDVD(DVD dvd) {
         listaDVDs.add(dvd);
     }
 
@@ -58,7 +58,7 @@ public class Catalogo {
 
     //    LISTADO
     public void listarTodosDVD() {
-        System.out.println("Listado de DVDs por título");
+        System.out.println("Listado de todos los DVDs por título");
         for (DVD dvd : listaDVDs) {
             System.out.println(dvd.getTitulo());
         }

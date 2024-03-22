@@ -56,12 +56,12 @@ public class Main {
 
 //        CATÁLOGO
         Catalogo catalogo = new Catalogo(new ArrayList<>());
-        catalogo.agregardDVD(dvd1);
-        catalogo.agregardDVD(dvd2);
-        catalogo.agregardDVD(dvd3);
-        catalogo.agregardDVD(dvd4);
-        catalogo.agregardDVD(dvd5);
-        catalogo.agregardDVD(dvd6);
+        catalogo.agregarDVD(dvd1);
+        catalogo.agregarDVD(dvd2);
+        catalogo.agregarDVD(dvd3);
+        catalogo.agregarDVD(dvd4);
+        catalogo.agregarDVD(dvd5);
+        catalogo.agregarDVD(dvd6);
 
 //        ingresar información de DVDs
 //        NO ENTIENDO QUÉ HAY QUE HACER
