@@ -25,18 +25,37 @@ public class Catalogo {
 //    FUNCIÓN PARA IMPRIMIR LA INFORMACIÓN DE LA CLASE POR DEFAULT SIN GETTERS + PRINT
 
 
-    public void agregarDVD(DVD dvd) {
-        listaDVDs.add(dvd);
+    public void agregarDVD() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduzca el título: ");
+        String titulo = scanner.next();
+        System.out.println("Introduzca el género: ");
+        String genero = scanner.next();
+        System.out.println("Introduzca la duración: ");
+        int duracion = scanner.nextInt();
+        System.out.println("Introduzca el estado de obtención [true/false]: ");
+        Boolean obtenido = scanner.nextBoolean();
+        System.out.println("Introduzca comentario: ");
+        String comentario = scanner.next();
+        System.out.println("Introduzca el director: ");
+        String director = scanner.next();
+        DVD dvdInput = new DVD(titulo,genero,duracion,obtenido,comentario,director);
+        listaDVDs.add(dvdInput);
+        scanner.close();
     }
 
-    public void eliminarDVD(String titulo) {
-        System.out.printf("Se ha eliminado el DVD %s\n", titulo);
+    public void eliminarDVD() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduzca el título del DVD a eliminar: ");
+        String titulo = scanner.next();
         listaDVDs.removeIf(dvd -> dvd.getTitulo().equals(titulo));
-
+        scanner.close();
     }
 
-    public void modificarObtenido(String titulo, String estado) {
-        System.out.printf("Modificar estado de obtención de %s\n", titulo);
+    public void modificarObtenido() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Introduzca el título del DVD a modificar estado de obtención: ");
+        String titulo = scanner.next();
         for (DVD dvd : listaDVDs) {
             if (dvd.getTitulo().equals(titulo)) {
                 if (Objects.equals(estado, "no")) {
@@ -46,6 +65,7 @@ public class Catalogo {
                 }
             }
         }
+        scanner.close();
     }
 
     public void modificarComentario(String titulo, String comentario) {
@@ -119,6 +139,46 @@ public class Catalogo {
             }
         }
         System.out.printf("Cantidad de DVDs obtenidos: %d\n", obtenidos);
+    }
+
+    public void interfazUsuario() {
+        System.out.println("----------------------------- CATÁLOGO DVDs -----------------------------");
+        System.out.println("ACCIONES\n[1] Agregar DVD\n[2] Eliminar DVD\n[3] Modificar estado obtenido\n[4] Modificar un comentario\n[5] Listar todos los DVDs\n[6] Listar los DVDs obtenidos\n[7] Listar los DVDs menores a una determinada duración\n[8] Listar DVDs por director\n[9] Listar DVDs de manera alfabética\n[10] Contar todos los DVDs\n[11] Contar DVDs obtenidos\n¿Qué acción desea realizar?: ");
+        Scanner scanner = new Scanner(System.in);
+        int input = scanner.nextInt();
+        switch (input) {
+            case 1:
+                agregarDVD();
+                break;
+//            case 2:
+//                eliminarDVD();
+//                break;
+//            case 3:
+//                modificarObtenido();
+//                break;
+//            case 4:
+//                modificarComentario();
+//                break;
+//            case 5:
+//                listarTodosDVD();
+//                break;
+//            case 6:
+//                listarDVDObtenidos();
+//                break;
+//            case 7:
+//                listarDVDTiempoMenor();
+//                break;
+//            case 8:
+//                listarDVDDirector();
+//                break;
+//            case 9:
+//                listarDVDAlfabetico();
+//                break;
+//            case 10:
+//                contarDVD();
+//            default:
+//                contarDVDObtenidos();
+        }
     }
 }
 
