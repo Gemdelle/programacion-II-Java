@@ -17,8 +17,8 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         Biblioteca biblioteca = new Biblioteca(new ArrayList<>());
-        Libro libroCienciaFiccion1 = new Libro("Novela", "Ciencia Ficción", "El Juego de Ender", Arrays.asList("Orson Scott Card"), "Penguin Random House", 2000, "Digital", "9788497599445", 10);
-        Libro libroCienciaFiccion2 = new Libro("Novela", "Ciencia Ficción", "El Juego de Ender", Arrays.asList("Orson Scott Card"), "HarperCollins", 2000, "Impreso", "9788497599446", 10);
+        Libro libroCienciaFiccion1 = new Libro("Novela", "Ciencia Ficción", "El Juego de Ender", Arrays.asList("Orson Scott Card"), "Penguin Random House", 2000, "Tapas duras", "9788497599445", 10);
+        Libro libroCienciaFiccion2 = new Libro("Novela", "Ciencia Ficción", "El Juego de Ender", Arrays.asList("Orson Scott Card"), "HarperCollins", 2000, "Tapas duras", "9788497599446", 10);
         Libro libroCienciaFiccion3 = new Libro("Novela", "Ciencia Ficción", "El Juego de Ender", Arrays.asList("Orson Scott Card"), "Simon & Schuster", 2000, "Audiolibro", "9788497599447", 10);
 
         Libro libroRomance = new Libro("Novela", "Romance", "Orgullo y Prejuicio", Arrays.asList("Jane Austen"), "Penguin Random House", 1813, "Digital", "9788497599448", 24);

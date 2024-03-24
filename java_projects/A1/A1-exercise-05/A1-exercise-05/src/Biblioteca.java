@@ -16,7 +16,15 @@ public class Biblioteca {
         libros.add(libro);
     }
 
-    public void verificarStock(String titulo) {
+    public void eliminarLibro(String titulo) {
+        for(Libro libro : libros) {
+            if(libro.getTitulo().equals(titulo)) {
+                libros.remove(libro);
+            }
+        }
+    }
+
+    public void comprarLibro(String titulo) {
         int stock = 0;
         for(Libro libro : libros) {
             if(libro.getTitulo().equals(titulo)) {
@@ -26,17 +34,18 @@ public class Biblioteca {
 
         if(stock > 0) {
             System.out.printf("Hay stock disponible para el libro %s ➤ %d",titulo,stock);
+            eliminarLibro(titulo); // actualiza el stock
         } else {
-            System.out.printf("Lo sentimos, no hay stock para el libro %s",titulo);
+            System.out.printf("Lo sentimos, no hay stock para el libro %s. Si desea comprar, deberá reponer.",titulo);
+            System.out.println("Quiere comprar? [Y/N]");
+            Scanner scanner = new Scanner(System.in);
+            String input = scanner.next().toUpperCase();
+            if(input.equals("Y")) {
+
+            }
         }
-    }
 
-    public void reponerStock(String titulo) {
-        verificarStock();
-        Scanner scanner = new Scanner(System.in);
-        String respuesta = scanner.next();
+
 
     }
-
-
 }
