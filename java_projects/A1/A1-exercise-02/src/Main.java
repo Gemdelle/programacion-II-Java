@@ -1,3 +1,5 @@
+
+
 //A1 exercise 01
 // Desarrollar una aplicación que nos permita almacenar información sobre películas (en DVD).  La idea es crear un catálogo de todos los DVD que tenemos, hemos visto o deseamos tener o ver.
 
@@ -33,8 +35,10 @@
 //Documentar la aplicación usando javadoc.
 
 import java.util.ArrayList;
-import java.util.List;
-
+/**
+ * La clase Main sirve para correr el programa principal e implementar el guardado de las instancias de {@link DVD} en un {@link Catalogo}.
+ * @author Gemdelle
+ */
 public class Main {
     public static void main(String[] args) {
         System.out.println("");

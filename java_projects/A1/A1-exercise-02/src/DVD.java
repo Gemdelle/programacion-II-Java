@@ -1,3 +1,7 @@
+/**
+ * La clase DVD implementa la lógica necesaria para crear DVDs.
+ * @author Gemdelle
+ */
 public class DVD {
 //    01. ATTRIBUTES
     private String titulo;
