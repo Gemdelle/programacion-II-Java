@@ -26,12 +26,12 @@ public class Catalogo {
 //    FUNCIÓN PARA IMPRIMIR LA INFORMACIÓN DE LA CLASE POR DEFAULT SIN GETTERS + PRINT
 
 
-    public void agregarDVD() {
-        Scanner scanner = new Scanner(System.in);
+    public void agregarDVD(Scanner scanner) {
         System.out.println("Introduzca el título: ");
         String titulo = scanner.next();
         System.out.println("Introduzca el género: ");
-        String genero = scanner.next();
+        String genero = scanner.nextLine();
+        scanner.nextLine();
         System.out.println("Introduzca la duración: ");
         int duracion = scanner.nextInt();
         System.out.println("Introduzca el estado de obtención [true/false]: ");
@@ -42,19 +42,15 @@ public class Catalogo {
         String director = scanner.next();
         DVD dvdInput = new DVD(titulo,genero,duracion,obtenido,comentario,director);
         listaDVDs.add(dvdInput);
-        scanner.close();
     }
 
-    public void eliminarDVD() {
-        Scanner scanner = new Scanner(System.in);
+    public void eliminarDVD(Scanner scanner) {
         System.out.println("Introduzca el título del DVD a eliminar: ");
         String titulo = scanner.next();
         listaDVDs.removeIf(dvd -> dvd.getTitulo().equals(titulo));
-        scanner.close();
     }
 
-    public void modificarObtenido() {
-        Scanner scanner = new Scanner(System.in);
+    public void modificarObtenido(Scanner scanner) {
         System.out.println("Introduzca el título del DVD a modificar estado de obtención: ");
         String titulo = scanner.next();
         System.out.println("Introduzca el nuevo estado de obtención [si/no]: ");
@@ -68,11 +64,9 @@ public class Catalogo {
                 }
             }
         }
-        scanner.close();
     }
 
-    public void modificarComentario() {
-        Scanner scanner = new Scanner(System.in);
+    public void modificarComentario(Scanner scanner) {
         System.out.println("Introduzca el título del DVD a modificar comentario: ");
         String titulo = scanner.next();
         System.out.println("Introduzca el comentario del DVD a modificar: ");
@@ -82,7 +76,6 @@ public class Catalogo {
                 dvd.setComentario(comentario);
             }
         }
-        scanner.close();
     }
 
     //    LISTADO
@@ -104,8 +97,7 @@ public class Catalogo {
         System.out.println("\n");
     }
 
-    public void listarDVDTiempoMenor() {
-        Scanner scanner = new Scanner(System.in);
+    public void listarDVDTiempoMenor(Scanner scanner) {
         System.out.println("Introduzca el tiempo de los DVD a listar: ");
         int tiempo = scanner.nextInt();
         for (DVD dvd : listaDVDs) {
@@ -114,11 +106,9 @@ public class Catalogo {
             }
         }
         System.out.println("\n");
-        scanner.close();
     }
 
-    public void listarDVDDirector() {
-        Scanner scanner = new Scanner(System.in);
+    public void listarDVDDirector(Scanner scanner) {
         System.out.println("Introduzca el director de los DVD a listar: ");
         String director = scanner.next();
         for (DVD dvd : listaDVDs) {
@@ -127,7 +117,6 @@ public class Catalogo {
             }
         }
         System.out.println("\n");
-        scanner.close();
     }
 
     public void listarDVDAlfabetico() {
@@ -162,14 +151,14 @@ public class Catalogo {
             Scanner scanner = new Scanner(System.in);
             int input = scanner.nextInt();
             switch (input) {
-                case 1 -> agregarDVD();
-                case 2 -> eliminarDVD();
-                case 3 -> modificarObtenido();
-                case 4 -> modificarComentario();
+                case 1 -> agregarDVD(scanner);
+                case 2 -> eliminarDVD(scanner);
+                case 3 -> modificarObtenido(scanner);
+                case 4 -> modificarComentario(scanner);
                 case 5 -> listarTodosDVD();
                 case 6 -> listarDVDObtenidos();
-                case 7 -> listarDVDTiempoMenor();
-                case 8 -> listarDVDDirector();
+                case 7 -> listarDVDTiempoMenor(scanner);
+                case 8 -> listarDVDDirector(scanner);
                 case 9 -> listarDVDAlfabetico();
                 case 10 -> contarDVD();
                 case 11 -> contarDVDObtenidos();
@@ -177,11 +166,8 @@ public class Catalogo {
                     scanner.close();
                     systemOnline = false;
                 }
-                default -> {
-                }
             }
         }
-
     }
 }
 
