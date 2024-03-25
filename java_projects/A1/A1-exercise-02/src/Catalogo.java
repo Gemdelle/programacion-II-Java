@@ -218,11 +218,3 @@ public class Catalogo {
     }
 }
 
-/**
- * @return
- */
-//    public String toString() {
-//        return this.dvd.titulo;
-//    }
-//}
-
