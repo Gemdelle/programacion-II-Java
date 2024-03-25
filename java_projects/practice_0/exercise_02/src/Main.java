@@ -10,10 +10,15 @@
 // Escriba una aplicación de prueba llamada PruebaFactura, que demuestre las capacidades de la clase Factura.
 public static void main(String[] args) {
     Factura factura1 = new Factura(1,1,"Taza",2,10);
-    Factura factura2 = new Factura(2, 100, "Vestido", 0, 100);
-    Factura factura3 = new Factura(10, 200, "Bracelet", 5, 0);
+    Factura factura2 = new Factura(2, 100, "Vestido", -1, 100);
+    Factura factura3 = new Factura(3, 200, "Bracelet", 5, -100);
 
-    factura1.obtenerMontoFactura();
-    factura2.obtenerMontoFactura();
-    factura3.obtenerMontoFactura();
+    double montoFactura1 = factura1.obtenerMontoFactura();
+    factura1.imprimirFactura(montoFactura1);
+
+    double montoFactura2 = factura2.obtenerMontoFactura();
+    factura2.imprimirFactura(montoFactura2);
+
+    double montoFactura3 = factura3.obtenerMontoFactura();
+    factura3.imprimirFactura(montoFactura3);
 }

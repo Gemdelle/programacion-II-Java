@@ -70,16 +70,17 @@ public class Factura {
 
 //    04. METHODS
 
-    public void obtenerMontoFactura() {
-        if (cantidadAComprar == 0) {
-            int montoInt = 0;
-            System.out.printf("El monto para la factura %d es de %d\n", numeroFactura, montoInt);
-        } else if (precio == 0.0) {
-            double montoDouble = 0.0;
-            System.out.printf("El monto para la factura %d es de %.2f\n", numeroFactura, montoDouble);
-        } else {
-            double monto = cantidadAComprar * precio;
-            System.out.printf("El monto para la factura %d es de %.2f\n", numeroFactura, monto);
+    public double obtenerMontoFactura() {
+        if (cantidadAComprar < 1) {
+            cantidadAComprar = 0;
+        } else if (precio < 0.1) {
+            precio = 0.0;
         }
+        double monto = cantidadAComprar * precio;
+        return monto;
+    }
+
+    public void imprimirFactura(double monto) {
+        System.out.printf("El monto para la factura %d es de %.2f\n", numeroFactura, monto);
     }
 }

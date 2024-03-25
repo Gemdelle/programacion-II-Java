@@ -14,6 +14,8 @@ public class Biblioteca {
     public void agregarLibro(Libro libro) {
         System.out.printf("Se ha agregado el libro %s\n",libro.getTitulo());
         libros.add(libro);
+        boolean existeEditorial = false;
+        for(String editorial : editoriales)
     }
 
     public void eliminarLibro(String titulo) {
@@ -41,7 +43,7 @@ public class Biblioteca {
             Scanner scanner = new Scanner(System.in);
             String input = scanner.next().toUpperCase();
             if(input.equals("Y")) {
-
+//                buscar el proveedor de la editorial del libro a reponer
             }
         }
 

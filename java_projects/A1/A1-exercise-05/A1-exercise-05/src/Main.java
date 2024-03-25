@@ -46,6 +46,5 @@ public class Main {
         biblioteca.agregarLibro(libroIngenieria2);
         biblioteca.agregarLibro(libroCienciasNaturales);
         biblioteca.agregarLibro(libroCienciasSociales);
-
     }
 }
