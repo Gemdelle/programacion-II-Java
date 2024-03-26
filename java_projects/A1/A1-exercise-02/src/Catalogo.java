@@ -16,11 +16,9 @@ public class Catalogo {
 
     // 03. METHODS
 
-//    FUNCIÓN PARA IMPRIMIR LA INFORMACIÓN DE LA CLASE POR DEFAULT SIN GETTERS + PRINT
-
     /**
      * Este método agrega DVDs al catálogo.
-     * @param dvd para leer el input del usuario
+     * @param dvd para leer el input del usuario.
      */
     public void agregarDVD(DVD dvd) {
         listaDVDs.add(dvd);
@@ -28,14 +26,14 @@ public class Catalogo {
 
     /**
      * Este método elimina DVDs del catálogo.
-     * @param titulo para leer el input del usuario
+     * @param titulo para leer el input del usuario.
      */
     public void eliminarDVD(String titulo) {
         listaDVDs.removeIf(dvd -> dvd.getTitulo().equals(titulo));
     }
 
     /**
-     * Este método modifica el DVD para indicar si esta o no obtenido.
+     * Este método modifica el DVD para indicar si está o no obtenido.
      * @param titulo para leer el input del usuario.
      * @param estado para leer el input del usuario.
      */
@@ -53,8 +51,8 @@ public class Catalogo {
 
     /**
      * Este método modifica el DVD para cambiar el comentario.
-     * @param titulo para leer el input del usuario
-     * @param comentario para leer el input del usuario
+     * @param titulo para leer el input del usuario.
+     * @param comentario para leer el input del usuario.
      */
     public void modificarComentario(String titulo, String comentario) {
         for (DVD dvd : listaDVDs) {
@@ -66,7 +64,8 @@ public class Catalogo {
 
     //    LISTADO
     /**
-     * Este método lista todos los DVDs creados
+     * Este método lista todos los DVDs creados.
+     * @return {@link List<DVD>} con todos los DVDs creados.
      */
     public List<DVD> listarTodosDVD() {
         return listaDVDs;
@@ -74,6 +73,7 @@ public class Catalogo {
 
     /**
      * Este método lista los DVDs obtenidos.
+     * @return {@link List<DVD>} con todos los DVDs obtenidos.
      */
     public List<DVD> listarDVDObtenidos() {
         return listaDVDs.stream().filter(DVD::isObtenido).toList();
@@ -81,14 +81,15 @@ public class Catalogo {
 
     /**
      * Este método lista los DVDs que tengan un tiempo menor al que indica el usuario.
-     * @param tiempo para filtrar los DVDs en base a ese valor
+     * @param tiempo para filtrar los DVDs en base al input del usuario.
+     * @return {@link List<DVD>} con todos los DVDs obtenidos.
      */
     public List<DVD> listarDVDTiempoMenor(int tiempo) {
         return listaDVDs.stream().filter((dvd)-> dvd.getDuracion() < tiempo ).toList();
     }
     /**
      * Este método lista los DVDs por director.
-     * @param director filtrar los DVDs en base a ese valor
+     * @param director filtrar los DVDs en base a ese valor.
      */
     public List<DVD> listarDVDDirector(String director) {
         return listaDVDs.stream().filter((dvd)-> director.equals(dvd.getDirector())).toList();
@@ -111,16 +112,11 @@ public class Catalogo {
     }
     /**
      * Este método lista los DVDs obtenidos.
+     *
+     * @return
      */
-    public void contarDVDObtenidos() {
-//        int obtenidos = 0;
-//                    for (DVD dvd : listaDVDs) {
-//                        if (dvd.isObtenido()) {
-//                            obtenidos += 1;
-//                        }
-//                    }
-//
-        return
+    public int contarDVDObtenidos() {
+        return listaDVDs.stream().filter(DVD::isObtenido).toList().size();
     }
     /**
      * Este método crea la interfaz de usuario.

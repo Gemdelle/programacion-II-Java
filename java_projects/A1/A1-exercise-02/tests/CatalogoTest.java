@@ -128,6 +128,4 @@ public class CatalogoTest {
 
         assertEquals(2, dvds);
     }
-
-
 }
