@@ -81,63 +81,46 @@ public class Catalogo {
 
     /**
      * Este método lista los DVDs que tengan un tiempo menor al que indica el usuario.
-     * @param scanner para leer el input del usuario
+     * @param tiempo para filtrar los DVDs en base a ese valor
      */
-    public void listarDVDTiempoMenor(Scanner scanner) {
-        System.out.println("Introduzca el tiempo de los DVD a listar: ");
-        int tiempo = scanner.nextInt();
-        for (DVD dvd : listaDVDs) {
-            if (dvd.getDuracion() < tiempo) {
-                System.out.printf("Título: %s / Duración: %d\n", dvd.getTitulo(), dvd.getDuracion());
-            }
-        }
-        System.out.println("\n");
+    public List<DVD> listarDVDTiempoMenor(int tiempo) {
+        return listaDVDs.stream().filter((dvd)-> dvd.getDuracion() < tiempo ).toList();
     }
     /**
      * Este método lista los DVDs por director.
-     * @param scanner para leer el input del usuario
+     * @param director filtrar los DVDs en base a ese valor
      */
-    public void listarDVDDirector(Scanner scanner) {
-        System.out.println("Introduzca el director de los DVD a listar: ");
-        String director = scanner.next();
-        for (DVD dvd : listaDVDs) {
-            if (Objects.equals(dvd.getDirector(), director)) {
-                System.out.println(dvd.getTitulo());
-            }
-        }
-        System.out.println("\n");
+    public List<DVD> listarDVDDirector(String director) {
+        return listaDVDs.stream().filter((dvd)-> director.equals(dvd.getDirector())).toList();
     }
     /**
      * Este método lista los DVDs de en orden alfabético.
      */
-    public void listarDVDAlfabetico() {
-        System.out.println("Listado alfabético de DVDs");
-        // Ordenar la lista de DVDs por título
-        listaDVDs.sort((dvd1, dvd2) -> dvd1.getTitulo().compareToIgnoreCase(dvd2.getTitulo()));
-        for (DVD dvd : listaDVDs) {
-            System.out.println(dvd.getTitulo());
-        }
-        System.out.println("\n");
+    public List<DVD> listarDVDAlfabetico() {
+        List<DVD> sortedDVDs = new ArrayList<>(listaDVDs);
+        sortedDVDs.sort((dvd1, dvd2) -> dvd1.getTitulo().compareToIgnoreCase(dvd2.getTitulo()));
+        return sortedDVDs;
     }
 
     //    INFORMAR
     /**
      * Este método cuenta la cantidad de DVDs creados.
      */
-    public void contarDVD() {
-        System.out.printf("Cantidad total de DVDs: %d\n", listaDVDs.size());
+    public int contarDVD() {
+        return listaDVDs.size();
     }
     /**
      * Este método lista los DVDs obtenidos.
      */
     public void contarDVDObtenidos() {
-        int obtenidos = 0;
-        for (DVD dvd : listaDVDs) {
-            if (dvd.isObtenido()) {
-                obtenidos += 1;
-            }
-        }
-        System.out.printf("Cantidad de DVDs obtenidos: %d\n", obtenidos);
+//        int obtenidos = 0;
+//                    for (DVD dvd : listaDVDs) {
+//                        if (dvd.isObtenido()) {
+//                            obtenidos += 1;
+//                        }
+//                    }
+//
+        return
     }
     /**
      * Este método crea la interfaz de usuario.
@@ -200,11 +183,41 @@ public class Catalogo {
                         System.out.println(dvd.getTitulo());
                     }
                 }
-                case 7 -> listarDVDTiempoMenor(scanner);
-                case 8 -> listarDVDDirector(scanner);
-                case 9 -> listarDVDAlfabetico();
-                case 10 -> contarDVD();
-                case 11 -> contarDVDObtenidos();
+                case 7 -> {
+                    System.out.println("Introduzca el tiempo de los DVD a listar: ");
+                    int tiempo = scanner.nextInt();
+                    List<DVD> dvdsMenoresATiempo = listarDVDTiempoMenor(tiempo);
+                    for(DVD dvd : dvdsMenoresATiempo) {
+                        System.out.println(dvd);
+                    }
+                }
+                case 8 -> {
+                    System.out.println("Introduzca el director de los DVD a listar: ");
+                    String director = scanner.next();
+                    List<DVD> dvdsDeDirector = listarDVDDirector(director);
+                    for (DVD dvd : dvdsDeDirector) {
+                        if (Objects.equals(dvd.getDirector(), director)) {
+                            System.out.println(dvd.getTitulo());
+                        }
+                    }
+                    System.out.println("\n");
+                }
+                case 9 -> {
+                    System.out.println("Listado alfabético de DVDs");
+                    List<DVD> dvdsOrdenadosAlfabeticamente = listarDVDAlfabetico();
+                    for (DVD dvd : dvdsOrdenadosAlfabeticamente) {
+                        System.out.println(dvd.getTitulo());
+                    }
+                    System.out.println("\n");
+                }
+                case 10 -> {
+                    int cantidadDVDs = contarDVD();
+                    System.out.printf("Cantidad total de DVDs: %d\n", cantidadDVDs);
+                }
+                case 11 -> {
+                    int cantidadDVDsObtenidos = contarDVDObtenidos();
+                    System.out.printf("Cantidad de DVDs obtenidos: %d\n", cantidadDVDsObtenidos);
+                }
                 case 12 -> {
                     scanner.close();
                     systemOnline = false;
