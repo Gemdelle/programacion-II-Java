@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import static java.util.Arrays.asList;
 
@@ -16,6 +17,7 @@ import static java.util.Arrays.asList;
 * Esto significa que se pide el libro a un proveedor de la editorial del libro.
 * */
 public class Main {
+    private static boolean estaCorriendo = true;
     public static void main(String[] args) {
 
 //       01. Crear proveedores
@@ -39,7 +41,7 @@ public class Main {
         Ejemplar libroCienciasSociales = new Ejemplar("Técnico", "Ciencias Sociales", "Economía Internacional", asList("Emily Brown"), "Oxford University Press", 2019, "Tapas duras", 20);
 
 //        03. Crear biblioteca
-        Biblioteca biblioteca = new Biblioteca(asList(libroIngenieria,libroJuvenil,libroPolicial,libroMisterio, libroCienciaFiccion,libroCienciasSociales,libroMisterio,libroRomance), asList(proveedor1,proveedor2,proveedor3), new ArrayList<>());
+        Biblioteca biblioteca = new Biblioteca(asList(libroIngenieria,libroJuvenil,libroPolicial,libroMisterio, libroCienciaFiccion,libroCienciasSociales,libroMisterio,libroRomance,libroCienciasNaturales), asList(proveedor1,proveedor2,proveedor3), new ArrayList<>());
 
 //        04. Crear libros
         Libro libroCienciaFiccion1 = new Libro("Novela", "Ciencia Ficción", "El Juego de Ender", asList("Orson Scott Card"), "Penguin Random House", 2000, "Tapas duras", 10);
@@ -59,7 +61,7 @@ public class Main {
         Libro libroCienciasSociales1 = new Libro("Técnico", "Ciencias Sociales", "Economía Internacional", asList("Emily Brown"), "Oxford University Press", 2019, "Tapas duras", 20);
 
 //        05. Agregar libros
-        biblioteca.agregarLibro(libroCienciaFiccion1); // este libro va a estar 2 veces, tiene el mismo título y diferente ISBN.
+        biblioteca.agregarLibro(libroCienciaFiccion1); // este libro va a estar 3 veces, tiene el mismo título y diferente ISBN.
         biblioteca.agregarLibro(libroCienciaFiccion2);
         biblioteca.agregarLibro(libroCienciaFiccion3);
         biblioteca.agregarLibro(libroRomance1);
@@ -70,9 +72,26 @@ public class Main {
         biblioteca.agregarLibro(libroCienciasNaturales1);
         biblioteca.agregarLibro(libroCienciasSociales1);
 
-//        05. Comprar un libro (se elimina del stock)
-        biblioteca.comprarLibro();
+//        06. Programa
+        Scanner scanner = new Scanner(System.in);
+        while(estaCorriendo) {
 
+            System.out.println("\nBienvenido a la Biblioteca\n\nACCIONES\nComprar libro [C]\nListar libros [L]\nSalir [E]\nQué acción desea realizar?: ");
 
+            String accion = scanner.next().toUpperCase();
+            scanner.nextLine();
+            switch (accion){
+                case "C":
+                    biblioteca.comprarLibro(scanner);
+                    break;
+                case "L":
+                    biblioteca.listarLibros();
+                    break;
+                case "E":
+                    System.out.println("Gracias por visitar la biblioteca.");
+                    estaCorriendo = false;
+                    scanner.close();
+            }
+        }
     }
 }
