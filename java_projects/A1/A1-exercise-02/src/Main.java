@@ -42,7 +42,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         System.out.println("");
-        Catalogo catalogoDVD = new Catalogo(new ArrayList<>());
+        Catalogo catalogoDVD = new Catalogo();
         catalogoDVD.interfazUsuario();
     }
 }

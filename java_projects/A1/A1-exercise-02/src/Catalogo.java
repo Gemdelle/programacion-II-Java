@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
@@ -10,13 +11,8 @@ import java.util.Scanner;
 public class Catalogo {
 
     //    01. ATTRIBUTES
-    final List<DVD> listaDVDs;
+    final List<DVD> listaDVDs = new ArrayList<>();
     private boolean systemOnline = true;
-
-    //    02. CONSTRUCTOR
-    public Catalogo(List<DVD> listaDVDs) {
-        this.listaDVDs = listaDVDs;
-    }
 
     // 03. METHODS
 
@@ -79,14 +75,8 @@ public class Catalogo {
     /**
      * Este método lista los DVDs obtenidos.
      */
-    public void listarDVDObtenidos() {
-        System.out.println("Listado de DVDs obtenidos");
-        for (DVD dvd : listaDVDs) {
-            if (dvd.isObtenido()) {
-                System.out.println(dvd.getTitulo());
-            }
-        }
-        System.out.println("\n");
+    public List<DVD> listarDVDObtenidos() {
+        return listaDVDs.stream().filter(DVD::isObtenido).toList();
     }
 
     /**
@@ -203,7 +193,13 @@ public class Catalogo {
                     }
                     System.out.println("\n");
                 }
-                case 6 -> listarDVDObtenidos();
+                case 6 -> {
+                    List<DVD> dvdsObtenidos = listarDVDObtenidos();
+                    System.out.println("Listado de DVDs obtenidos");
+                    for(DVD dvd : dvdsObtenidos) {
+                        System.out.println(dvd.getTitulo());
+                    }
+                }
                 case 7 -> listarDVDTiempoMenor(scanner);
                 case 8 -> listarDVDDirector(scanner);
                 case 9 -> listarDVDAlfabetico();
