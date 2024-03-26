@@ -71,13 +71,12 @@ public class Factura {
 //    04. METHODS
 
     public double obtenerMontoFactura() {
-        if (cantidadAComprar < 1) {
+        if (cantidadAComprar < 0) {
             cantidadAComprar = 0;
-        } else if (precio < 0.1) {
+        } else if (precio < 0) {
             precio = 0.0;
         }
-        double monto = cantidadAComprar * precio;
-        return monto;
+        return cantidadAComprar * precio;
     }
 
     public void imprimirFactura(double monto) {
