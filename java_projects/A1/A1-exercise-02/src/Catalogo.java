@@ -118,7 +118,7 @@ public class Catalogo {
         System.out.println("\n");
     }
     /**
-     * Este método lista los DVDs de en orden alfabetico.
+     * Este método lista los DVDs de en orden alfabético.
      */
     public void listarDVDAlfabetico() {
         System.out.println("Listado alfabético de DVDs");

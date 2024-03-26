@@ -67,5 +67,4 @@ public DVD(String titulo, String genero, int duracion, boolean obtenido, String 
     public void setDirector(String director) {
         this.director = director;
     }
-
 }

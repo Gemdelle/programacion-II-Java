@@ -1,5 +1,6 @@
 import java.util.ArrayList;
-import java.util.Arrays;
+
+import static java.util.Arrays.asList;
 
 /*
 * Ejercicio 5:
@@ -16,35 +17,62 @@ import java.util.Arrays;
 * */
 public class Main {
     public static void main(String[] args) {
-        Biblioteca biblioteca = new Biblioteca(new ArrayList<>());
-        Libro libroCienciaFiccion1 = new Libro("Novela", "Ciencia Ficción", "El Juego de Ender", Arrays.asList("Orson Scott Card"), "Penguin Random House", 2000, "Tapas duras", "9788497599445", 10);
-        Libro libroCienciaFiccion2 = new Libro("Novela", "Ciencia Ficción", "El Juego de Ender", Arrays.asList("Orson Scott Card"), "HarperCollins", 2000, "Tapas duras", "9788497599446", 10);
-        Libro libroCienciaFiccion3 = new Libro("Novela", "Ciencia Ficción", "El Juego de Ender", Arrays.asList("Orson Scott Card"), "Simon & Schuster", 2000, "Audiolibro", "9788497599447", 10);
 
-        Libro libroRomance = new Libro("Novela", "Romance", "Orgullo y Prejuicio", Arrays.asList("Jane Austen"), "Penguin Random House", 1813, "Digital", "9788497599448", 24);
+//       01. Crear proveedores
+        Proveedor proveedor1 = new Proveedor(asList("HarperCollins", "Simon & Schuster", "McGraw-Hill", "Pearson"));
+        Proveedor proveedor2 = new Proveedor(asList("Oxford University Press", "Cambridge University Press", "Macmillan Publishers", "Hachette Livre", "Springer Nature"));
+        Proveedor proveedor3 = new Proveedor(asList("Wiley", "Penguin Random House", "Elsevier", "Bloomsbury Publishing", "Cengage Learning"));
 
-        Libro libroMisterio = new Libro("Novela", "Misterio", "El Código Da Vinci", Arrays.asList("Dan Brown"), "HarperCollins", 2003, "Impreso", "9788497599449", 105);
+//        02. Crear ejemplares de libros
+        Ejemplar libroCienciaFiccion = new Ejemplar("Novela", "Ciencia Ficción", "El Juego de Ender", asList("Orson Scott Card"), "Penguin Random House", 2000, "Tapas duras", 10);
 
-        Libro libroJuvenil = new Libro("Novela", "Juvenil", "Harry Potter y la Piedra Filosofal", Arrays.asList("J.K. Rowling"), "Simon & Schuster", 1997, "Impreso", "9788497599450", 17);
+        Ejemplar libroRomance = new Ejemplar("Novela", "Romance", "Orgullo y Prejuicio", asList("Jane Austen"), "Penguin Random House", 1813, "Digital", 24);
 
-        Libro libroPolicial = new Libro("Novela", "Policial", "El Silencio de los Corderos", Arrays.asList("Thomas Harris"), "Penguin Random House", 1988, "Digital", "9788497599451", 20);
+        Ejemplar libroMisterio = new Ejemplar("Novela", "Misterio", "El Código Da Vinci", asList("Dan Brown"), "HarperCollins", 2003, "Impreso", 105);
 
-        Libro libroIngenieria1 = new Libro("Técnico", "Ingeniería", "Introducción a la Ingeniería", Arrays.asList("John Doe"), "McGraw-Hill", 2020, "Tapas duras", "9788497599445", 10);
-        Libro libroIngenieria2 = new Libro("Técnico", "Ingeniería", "Introducción a la Ingeniería", Arrays.asList("John Doe"), "Pearson", 2015, "Edición económica", "9788497599446", 12);
-        Libro libroCienciasNaturales = new Libro("Técnico", "Ciencias Naturales", "Biología Celular", Arrays.asList("Jane Smith", "Alan Johnson"), "Pearson", 2018, "Edición económica", "9788497599447", 15);
-        Libro libroCienciasSociales = new Libro("Técnico", "Ciencias Sociales", "Economía Internacional", Arrays.asList("Emily Brown"), "Oxford University Press", 2019, "Tapas duras", "9788497599448", 20);
+        Ejemplar libroJuvenil = new Ejemplar("Novela", "Juvenil", "Harry Potter y la Piedra Filosofal", asList("J.K. Rowling"), "Simon & Schuster", 1997, "Impreso", 17);
 
-        biblioteca.agregarLibro(libroCienciaFiccion1);
-        biblioteca.agregarLibro(libroCienciaFiccion1);
+        Ejemplar libroPolicial = new Ejemplar("Novela", "Policial", "El Silencio de los Corderos", asList("Thomas Harris"), "Hachette Livre", 1988, "Digital", 20);
+
+        Ejemplar libroIngenieria = new Ejemplar("Técnico", "Ingeniería", "Introducción a la Ingeniería", asList("John Doe"), "McGraw-Hill", 2020, "Tapas duras", 10);
+        Ejemplar libroCienciasNaturales = new Ejemplar("Técnico", "Ciencias Naturales", "Biología Celular", asList("Jane Smith", "Alan Johnson"), "Pearson", 2018, "Edición económica", 15);
+        Ejemplar libroCienciasSociales = new Ejemplar("Técnico", "Ciencias Sociales", "Economía Internacional", asList("Emily Brown"), "Oxford University Press", 2019, "Tapas duras", 20);
+
+//        03. Crear biblioteca
+        Biblioteca biblioteca = new Biblioteca(asList(libroIngenieria,libroJuvenil,libroPolicial,libroMisterio, libroCienciaFiccion,libroCienciasSociales,libroMisterio,libroRomance), asList(proveedor1,proveedor2,proveedor3), new ArrayList<>());
+
+//        04. Crear libros
+        Libro libroCienciaFiccion1 = new Libro("Novela", "Ciencia Ficción", "El Juego de Ender", asList("Orson Scott Card"), "Penguin Random House", 2000, "Tapas duras", 10);
+        Libro libroCienciaFiccion2 = new Libro("Novela", "Ciencia Ficción", "El Juego de Ender", asList("Orson Scott Card"), "HarperCollins", 2000, "Tapas duras", 10);
+        Libro libroCienciaFiccion3 = new Libro("Novela", "Ciencia Ficción", "El Juego de Ender", asList("Orson Scott Card"), "Simon & Schuster", 2000, "Audiolibro", 10);
+
+        Libro libroRomance1 = new Libro("Novela", "Romance", "Orgullo y Prejuicio", asList("Jane Austen"), "Penguin Random House", 1813, "Digital", 24);
+
+        Libro libroMisterio1 = new Libro("Novela", "Misterio", "El Código Da Vinci", asList("Dan Brown"), "HarperCollins", 2003, "Impreso", 105);
+
+        Libro libroJuvenil1 = new Libro("Novela", "Juvenil", "Harry Potter y la Piedra Filosofal", asList("J.K. Rowling"), "Simon & Schuster", 1997, "Impreso", 17);
+
+        Libro libroPolicial1 = new Libro("Novela", "Policial", "El Silencio de los Corderos", asList("Thomas Harris"), "Hachette Livre", 1988, "Digital", 20);
+
+        Libro libroIngenieria1 = new Libro("Técnico", "Ingeniería", "Introducción a la Ingeniería", asList("John Doe"), "McGraw-Hill", 2020, "Tapas duras", 10);
+        Libro libroCienciasNaturales1 = new Libro("Técnico", "Ciencias Naturales", "Biología Celular", asList("Jane Smith", "Alan Johnson"), "Pearson", 2018, "Edición económica", 15);
+        Libro libroCienciasSociales1 = new Libro("Técnico", "Ciencias Sociales", "Economía Internacional", asList("Emily Brown"), "Oxford University Press", 2019, "Tapas duras", 20);
+
+//        05. Agregar libros
+        biblioteca.agregarLibro(libroCienciaFiccion1); // este libro va a estar 2 veces, tiene el mismo título y diferente ISBN.
         biblioteca.agregarLibro(libroCienciaFiccion2);
         biblioteca.agregarLibro(libroCienciaFiccion3);
-        biblioteca.agregarLibro(libroRomance);
-        biblioteca.agregarLibro(libroMisterio);
-        biblioteca.agregarLibro(libroJuvenil);
-        biblioteca.agregarLibro(libroPolicial);
+        biblioteca.agregarLibro(libroRomance1);
+        biblioteca.agregarLibro(libroMisterio1);
+        biblioteca.agregarLibro(libroJuvenil1);
+        biblioteca.agregarLibro(libroPolicial1);
         biblioteca.agregarLibro(libroIngenieria1);
-        biblioteca.agregarLibro(libroIngenieria2);
-        biblioteca.agregarLibro(libroCienciasNaturales);
-        biblioteca.agregarLibro(libroCienciasSociales);
+        biblioteca.agregarLibro(libroCienciasNaturales1);
+        biblioteca.agregarLibro(libroCienciasSociales1);
+
+//        05. Comprar un libro (se elimina del stock)
+        biblioteca.comprarLibro();
+
+
     }
 }
