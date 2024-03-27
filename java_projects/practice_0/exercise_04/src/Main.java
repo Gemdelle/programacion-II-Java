@@ -11,7 +11,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Vendedor vendedor1 = new Vendedor(1);
-        List<Nota>[] notasVendedor1 = vendedor1.generarNotasPorVendedor();
+        List<Nota>[] notasVendedor1 = vendedor1.generarNotasPorVendedorPorMes();
         vendedor1.impresion(notasVendedor1);
     }
 }
