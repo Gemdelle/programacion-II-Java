@@ -4,10 +4,9 @@ import java.util.Objects;
 import java.util.Scanner;
 
 /**
- * La clase Catalogo implementa la lógica necesaria para acceder y modificar los DVDs {@link DVD} que son de interés para el usuario.
+ * La clase CatalogoDVD implementa la logica necesaria para acceder y modificar los DVDs {@link DVD} que son de interes para el usuario.
  * @author Gemdelle
  */
-
 public class CatalogoDVD {
 
     //    01. ATTRIBUTES
@@ -17,25 +16,26 @@ public class CatalogoDVD {
     // 03. METHODS
 
     /**
-     * Este método agrega DVDs al catálogo.
-     * @param dvd para leer el input del usuario.
+     * Este metodo agrega un DVD al catalogo.
+     * @param dvd El DVD que se va a agregar al catalogo.
      */
     public void agregarDVD(DVD dvd) {
         listaDVDs.add(dvd);
     }
 
+
     /**
-     * Este método elimina DVDs del catálogo.
-     * @param titulo para leer el input del usuario.
+     * Este metodo elimina un DVD del catalogo basado en su titulo.
+     * @param titulo El titulo del DVD que se va a eliminar del catalogo.
      */
     public void eliminarDVD(String titulo) {
         listaDVDs.removeIf(dvd -> dvd.getTitulo().equals(titulo));
     }
 
     /**
-     * Este método modifica el DVD para indicar si está o no obtenido.
-     * @param titulo para leer el input del usuario.
-     * @param estado para leer el input del usuario.
+     * Este metodo modifica el estado obtenido de un DVD en el catalogo.
+     * @param titulo El titulo del DVD que se va a modificar.
+     * @param estado El estado obtenido del DVD, puede ser "si" o "no".
      */
     public void modificarObtenido(String titulo, String estado) {
         for (DVD dvd : listaDVDs) {
@@ -50,9 +50,9 @@ public class CatalogoDVD {
     }
 
     /**
-     * Este método modifica el DVD para cambiar el comentario.
-     * @param titulo para leer el input del usuario.
-     * @param comentario para leer el input del usuario.
+     * Este metodo modifica el DVD para cambiar el comentario.
+     * @param titulo El titulo del DVD que se va a modificar.
+     * @param comentario El nuevo comentario del DVD.
      */
     public void modificarComentario(String titulo, String comentario) {
         for (DVD dvd : listaDVDs) {
@@ -64,38 +64,42 @@ public class CatalogoDVD {
 
     //    LISTADO
     /**
-     * Este método lista todos los DVDs creados.
-     * @return {@link List<DVD>} con todos los DVDs creados.
+     * Este metodo lista todos los DVDs creados.
+     * @return Una lista con todos los DVDs creados.
      */
     public List<DVD> listarTodosDVD() {
         return listaDVDs;
     }
 
     /**
-     * Este método lista los DVDs obtenidos.
-     * @return {@link List<DVD>} con todos los DVDs obtenidos.
+     * Este metodo lista los DVDs obtenidos.
+     * @return Una lista con todos los DVDs obtenidos.
      */
     public List<DVD> listarDVDObtenidos() {
         return listaDVDs.stream().filter(DVD::isObtenido).toList();
     }
 
     /**
-     * Este método lista los DVDs que tengan un tiempo menor al que indica el usuario.
-     * @param tiempo para filtrar los DVDs en base al input del usuario.
-     * @return {@link List<DVD>} con todos los DVDs obtenidos.
+     * Este metodo lista los DVDs que tengan un tiempo menor al que indica el usuario.
+     * @param tiempo El tiempo máximo en minutos para filtrar los DVDs.
+     * @return Una lista con todos los DVDs cuya duración sea menor al tiempo especificado por el usuario.
      */
     public List<DVD> listarDVDTiempoMenor(int tiempo) {
         return listaDVDs.stream().filter((dvd)-> dvd.getDuracion() < tiempo ).toList();
     }
+
     /**
-     * Este método lista los DVDs por director.
-     * @param director filtrar los DVDs en base a ese valor.
+     * Este metodo lista los DVDs por director.
+     * @param director El nombre del director para filtrar los DVDs.
+     * @return Una lista con todos los DVDs dirigidos por el director especificado.
      */
     public List<DVD> listarDVDDirector(String director) {
         return listaDVDs.stream().filter((dvd)-> director.equals(dvd.getDirector())).toList();
     }
+
     /**
-     * Este método lista los DVDs de en orden alfabético.
+     * Este metodo lista los DVDs de manera alfabetica.
+     * @return Una lista con todos los DVDs ordenados alfabeticamente por titulo.
      */
     public List<DVD> listarDVDAlfabetico() {
         List<DVD> sortedDVDs = new ArrayList<>(listaDVDs);
@@ -105,19 +109,21 @@ public class CatalogoDVD {
 
     //    INFORMAR
     /**
-     * Este método cuenta la cantidad de DVDs creados.
+     * Este metodo cuenta la cantidad de DVDs creados.
+     * @return La cantidad de DVDs en el catalogo.
      */
     public int contarDVD() {
         return listaDVDs.size();
     }
+
     /**
-     * Este método lista los DVDs obtenidos.
-     *
-     * @return
+     * Este metodo cuenta la cantidad de DVDs obtenidos.
+     * @return El numero de DVDs obtenidos.
      */
     public int contarDVDObtenidos() {
         return listaDVDs.stream().filter(DVD::isObtenido).toList().size();
     }
+
     /**
      * Este método crea la interfaz de usuario.
      */
