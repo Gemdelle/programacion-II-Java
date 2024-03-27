@@ -22,24 +22,8 @@ public class DVD {
         return titulo;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
     public int getDuracion() {
         return duracion;
-    }
-
-    public void setDuracion(int duracion) {
-        this.duracion = duracion;
     }
 
     public boolean isObtenido() {
@@ -50,19 +34,17 @@ public class DVD {
         this.obtenido = obtenido;
     }
 
-    public String getComentario() {
-        return comentario;
-    }
-
     public void setComentario(String comentario) {
         this.comentario = comentario;
     }
     public String getDirector() {
         return director;
     }
-
-    public void setDirector(String director) {
-        this.director = director;
+    public String getGenero() {
+        return genero;
     }
 
+    public String getComentario() {
+        return comentario;
+    }
 }

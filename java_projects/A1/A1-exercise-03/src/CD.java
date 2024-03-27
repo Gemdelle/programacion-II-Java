@@ -24,32 +24,16 @@ public CD(String titulo, String interprete, int cantidad_temas, int duracion, bo
         return titulo;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
     public String getInterprete() {
         return interprete;
-    }
-
-    public void setInterprete(String interprete) {
-        this.interprete = interprete;
     }
 
     public int getCantidad_temas() {
         return cantidad_temas;
     }
 
-    public void setCantidad_temas(int cantidad_temas) {
-        this.cantidad_temas = cantidad_temas;
-    }
-
     public int getDuracion() {
         return duracion;
-    }
-
-    public void setDuracion(int duracion) {
-        this.duracion = duracion;
     }
 
     public boolean isObtenido() {
@@ -59,23 +43,8 @@ public CD(String titulo, String interprete, int cantidad_temas, int duracion, bo
     public void setObtenido(boolean obtenido) {
         this.obtenido = obtenido;
     }
-
-    public String getComentario() {
-        return comentario;
-    }
-
     public void setComentario(String comentario) {
         this.comentario = comentario;
     }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
-//    04. METHODS
 
 }
