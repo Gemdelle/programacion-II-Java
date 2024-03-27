@@ -24,6 +24,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * La clase Main sirve para correr el programa principal e implementar el guardado de las instancias de {@link DVD} en un {@link CatalogoDVD} y las instancias de {@link CD} en un {@link CatalogoCD}.
+ * @author Gemdelle
+ */
 public class Main {
     private static boolean sistemaCorriendo = true;
     public static void main(String[] args) {

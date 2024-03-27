@@ -16,7 +16,7 @@ public class CatalogoDVD {
     // 03. METHODS
 
     /**
-     * Este metodo agrega un DVD al catalogo.
+     * Agrega un DVD al catalogo.
      * @param dvd El DVD que se va a agregar al catalogo.
      */
     public void agregarDVD(DVD dvd) {
@@ -25,7 +25,7 @@ public class CatalogoDVD {
 
 
     /**
-     * Este metodo elimina un DVD del catalogo basado en su titulo.
+     * Elimina un DVD del catalogo basado en su titulo.
      * @param titulo El titulo del DVD que se va a eliminar del catalogo.
      */
     public void eliminarDVD(String titulo) {
@@ -33,7 +33,7 @@ public class CatalogoDVD {
     }
 
     /**
-     * Este metodo modifica el estado obtenido de un DVD en el catalogo.
+     * Modifica el estado obtenido de un DVD en el catalogo.
      * @param titulo El titulo del DVD que se va a modificar.
      * @param estado El estado obtenido del DVD, puede ser "si" o "no".
      */
@@ -50,7 +50,7 @@ public class CatalogoDVD {
     }
 
     /**
-     * Este metodo modifica el DVD para cambiar el comentario.
+     * Modifica el DVD para cambiar el comentario.
      * @param titulo El titulo del DVD que se va a modificar.
      * @param comentario El nuevo comentario del DVD.
      */
@@ -64,7 +64,7 @@ public class CatalogoDVD {
 
     //    LISTADO
     /**
-     * Este metodo lista todos los DVDs creados.
+     * Lista todos los DVDs creados.
      * @return Una lista con todos los DVDs creados.
      */
     public List<DVD> listarTodosDVD() {
@@ -72,7 +72,7 @@ public class CatalogoDVD {
     }
 
     /**
-     * Este metodo lista los DVDs obtenidos.
+     * Lista los DVDs obtenidos.
      * @return Una lista con todos los DVDs obtenidos.
      */
     public List<DVD> listarDVDObtenidos() {
@@ -80,7 +80,7 @@ public class CatalogoDVD {
     }
 
     /**
-     * Este metodo lista los DVDs que tengan un tiempo menor al que indica el usuario.
+     * Lista los DVDs que tengan un tiempo menor al que indica el usuario.
      * @param tiempo El tiempo máximo en minutos para filtrar los DVDs.
      * @return Una lista con todos los DVDs cuya duración sea menor al tiempo especificado por el usuario.
      */
@@ -89,7 +89,7 @@ public class CatalogoDVD {
     }
 
     /**
-     * Este metodo lista los DVDs por director.
+     * Lista los DVDs por director.
      * @param director El nombre del director para filtrar los DVDs.
      * @return Una lista con todos los DVDs dirigidos por el director especificado.
      */
@@ -98,7 +98,7 @@ public class CatalogoDVD {
     }
 
     /**
-     * Este metodo lista los DVDs de manera alfabetica.
+     * Lista los DVDs de manera alfabetica.
      * @return Una lista con todos los DVDs ordenados alfabeticamente por titulo.
      */
     public List<DVD> listarDVDAlfabetico() {
@@ -109,7 +109,7 @@ public class CatalogoDVD {
 
     //    INFORMAR
     /**
-     * Este metodo cuenta la cantidad de DVDs creados.
+     * Cuenta la cantidad de DVDs creados.
      * @return La cantidad de DVDs en el catalogo.
      */
     public int contarDVD() {
@@ -117,7 +117,7 @@ public class CatalogoDVD {
     }
 
     /**
-     * Este metodo cuenta la cantidad de DVDs obtenidos.
+     * Cuenta la cantidad de DVDs obtenidos.
      * @return El numero de DVDs obtenidos.
      */
     public int contarDVDObtenidos() {
@@ -125,11 +125,11 @@ public class CatalogoDVD {
     }
 
     /**
-     * Este método crea la interfaz de usuario.
+     * Crea la interfaz de usuario.
      */
     public void interfazUsuario(Scanner scanner) {
         while (elCatalogoDeDVDsEstaCorriendo) {
-            System.out.println("----------------------------- CATÁLOGO DVDs -----------------------------");
+            System.out.println("----------------------------- CATALOGO DVDs -----------------------------");
             System.out.println("ACCIONES\n[1] Agregar DVD\n[2] Eliminar DVD\n[3] Modificar estado obtenido\n[4] Modificar un comentario\n[5] Listar todos los DVDs\n[6] Listar los DVDs obtenidos\n[7] Listar los DVDs menores a una determinada duración\n[8] Listar DVDs por director\n[9] Listar DVDs de manera alfabética\n[10] Contar todos los DVDs\n[11] Contar DVDs obtenidos\n[12] Salir\n¿Qué acción desea realizar?: ");
             int input = scanner.nextInt();
             switch (input) {
