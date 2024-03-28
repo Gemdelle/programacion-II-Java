@@ -10,4 +10,29 @@ public class Nota {
         this.numeroProducto = numeroProducto;
         this.valorTotalProducto = valorTotalProducto;
     }
+
+//    03. SETTERS & GETTERS
+    public int getNumeroVendedor() {
+        return numeroVendedor;
+    }
+
+    public void setNumeroVendedor(int numeroVendedor) {
+        this.numeroVendedor = numeroVendedor;
+    }
+
+    public int getNumeroProducto() {
+        return numeroProducto;
+    }
+
+    public void setNumeroProducto(int numeroProducto) {
+        this.numeroProducto = numeroProducto;
+    }
+
+    public int getValorTotalProducto() {
+        return valorTotalProducto;
+    }
+
+    public void setValorTotalProducto(int valorTotalProducto) {
+        this.valorTotalProducto = valorTotalProducto;
+    }
 }

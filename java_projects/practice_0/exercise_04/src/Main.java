@@ -10,8 +10,31 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
+        // Crear vendedores.
         Vendedor vendedor1 = new Vendedor(1);
+        Vendedor vendedor2 = new Vendedor(2);
+        Vendedor vendedor3 = new Vendedor(3);
+        Vendedor vendedor4 = new Vendedor(4);
+
+        // Generar notas mensuales de cada vendedor.
         List<List<Nota>> notasVendedor1 = vendedor1.generarNotasPorVendedorPorMes();
-        vendedor1.impresion(notasVendedor1);
+        List<List<Nota>> notasVendedor2 = vendedor2.generarNotasPorVendedorPorMes();
+        List<List<Nota>> notasVendedor3 = vendedor3.generarNotasPorVendedorPorMes();
+        List<List<Nota>> notasVendedor4 = vendedor4.generarNotasPorVendedorPorMes();
+
+        // Imprimir notas mensuales de cada vendedor para chequear funcionamiento.
+//        System.out.println("\nNOTAS VENDEDOR 1");
+//        vendedor1.impresion(notasVendedor1);
+//        System.out.println("\nNOTAS VENDEDOR 2");
+//        vendedor1.impresion(notasVendedor2);
+//        System.out.println("\nNOTAS VENDEDOR 3");
+//        vendedor1.impresion(notasVendedor3);
+//        System.out.println("\nNOTAS VENDEDOR 4");
+//        vendedor1.impresion(notasVendedor4);
+
+        // Crear mercado
+        Mercado mercado = new Mercado();
+        List<List<Integer>> gananciasTotales = mercado.gananciasTotalesPorMes(vendedor1,vendedor2,vendedor3,vendedor4);
+        mercado.impresionGanancias(gananciasTotales);
     }
 }
