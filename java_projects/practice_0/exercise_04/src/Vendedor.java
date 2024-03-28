@@ -14,49 +14,50 @@ public class Vendedor {
     }
 
     // 03. METHODS
-    public List<Nota>[] generarNotasPorVendedorPorMes() {
+    public List<List<Nota>> generarNotasPorVendedorPorMes() { // Devuelve una lista en donde cada INDEX (día) es una lista de notas.
         int dias = 30;
-        List<Nota>[] diasMes = new ArrayList[dias]; // crear array de listas con 30 lugares, del 0-29
+        List<List<Nota>> diasMes = new ArrayList(); // crear array de listas con 30 lugares, del 0-29
 
-
-        Random random = new Random(); //
+        Random random = new Random();
         int cantidadNotas = 0;
-        // CREAR VARIABLE PARA QUE EL PRODUCTO SEA RANDOM ENTRE 1 Y 5
-
-        int ganancia = random.nextInt(3000) + 500; // 500 - 3500
+        int ganancia = 0;
+        int indexRandom = 0;
+        int productoRandom = 0;
 
         for (int i = 0; i < dias; i++)
         { // para cada día del mes
 
             // VARIABLES PARA CREAR LAS NOTAS DE VENDEDOR POR DÍA
-            cantidadNotas = random.nextInt(5) + 1; // cambiar la cantidad de notas por día. nextInt(5) -> va a devolver 5 posiciones, pero le suma 1 al resultado para que el 0 sea 1.
+            // Generar productos 1-5
             List<Integer> numeroProductos =  new ArrayList<>(); // Lista que va a guardar los números 1-5, que son los números de producto posibles.
             numeroProductos.addAll(Arrays.asList(1, 2, 3, 4, 5)); // Agregar los números 1-5 a la lista.
-            for(int c = 0;c < cantidadNotas;c++) {
-                int randomIndex = random.nextInt(numeroProductos.size()); // Obtener un índice aleatorio dentro del rango de la lista.
-                numeroProductos.remove(randomIndex); // Eliminar el elemento en el índice aleatorio.
-            } // Al terminar el for, va a quedar una lista con productos random que se corresponde con la CANTIDAD de notas generadas también de manera random para ese día.
-            List<Nota> notasPorDia = new ArrayList<>(); // Lista que va a guardar las notas de cada día
 
-            for (int j = 0; j < cantidadNotas; j++)
-            {
-                int numeroDeProducto = numeroProductos.get(random.nextInt(numeroProductos.size()));
-                Nota nota = new Nota(numeroVendedor, numeroDeProducto, ganancia);
+            // Generar lista para guardar notas y cantidad (varía por día)
+            cantidadNotas = random.nextInt(5); // cambiar la cantidad de notas por día 0-5
+            List<Nota> notasPorDia = new ArrayList(); // Lista que va a guardar las notas de cada día
+
+            // Crear nota por día y guardarla en el array
+            for(int j = 0;j < cantidadNotas;j++) {
+                // Producto
+                indexRandom = random.nextInt(4);
+                productoRandom = numeroProductos.get(indexRandom); // Obtener un producto aleatorio dentro de la lista.
+                numeroProductos.remove(indexRandom); // Eliminar el elemento en el índice aleatorio.
+                // Ganancia
+                ganancia = random.nextInt(3000) + 500; // 500 - 3500
+
+                // Crear nota
+                Nota nota = new Nota(numeroVendedor, productoRandom, ganancia);
                 notasPorDia.add(nota); // una lista con las notas que hay por día
-                numeroProductos.remove(numeroDeProducto);
-            }
-            diasMes[i] = notasPorDia; // array de arrays
+            } // Al terminar el for, va a quedar una lista con la cantidad de notas por día del vendedor
+
+            diasMes.add(notasPorDia); // agregar las notas generadas para un día al día que le corresponde
         }
         return diasMes;
     }
 
-    //    public determinarNumeroProducto(int cantidadNotas) {
-//
-//    }
-//
-    public void impresion(List<Nota>[] diasMes) {
-        for (int i = 0; i < diasMes.length-1; i++) {
-            List<Nota> notasDia = diasMes[i];
+    public void impresion(List<List<Nota>> diasMes) {
+        for (int i = 0; i < diasMes.size()-1; i++) {
+            List<Nota> notasDia = diasMes.get(i);
             System.out.println("Día " + (i + 1) + ":");
             for (Nota nota : notasDia) {
                 System.out.println(nota);
