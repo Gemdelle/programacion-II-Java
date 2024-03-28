@@ -19,10 +19,10 @@ public class Vendedor {
         List<List<Nota>> diasMes = new ArrayList(); // crear array de listas con 30 lugares, del 0-29
 
         Random random = new Random();
-        int cantidadNotas = 0;
-        int ganancia = 0;
-        int indexRandom = 0;
-        int productoRandom = 0;
+        int cantidadNotas;
+        int ganancia;
+        int indexRandom;
+        int productoRandom;
 
         for (int i = 0; i < dias; i++) { // para cada día del mes
 
@@ -72,23 +72,29 @@ public class Vendedor {
         int gananciasProducto4 = 0;
         int gananciasProducto5 = 0;
 
-        for (int i = 0; i < dias; i++) {
-            for (int j = 0; j < notasPorDia.get(i).size(); j++) {
-                if (notasPorDia.get(i).get(j).numeroProducto == 1) {
-                    gananciasProducto1 += notasPorDia.get(i).get(j).getValorTotalProducto();
-                } else if (notasPorDia.get(i).get(j).numeroProducto == 2) {
-                    gananciasProducto2 += notasPorDia.get(i).get(j).getValorTotalProducto();
-                } else if (notasPorDia.get(i).get(j).numeroProducto == 3) {
-                    gananciasProducto3 += notasPorDia.get(i).get(j).getValorTotalProducto();
-                } else if (notasPorDia.get(i).get(j).numeroProducto == 4) {
-                    gananciasProducto4 += notasPorDia.get(i).get(j).getValorTotalProducto();
-                } else if (notasPorDia.get(i).get(j).numeroProducto == 5) {
-                    gananciasProducto5 += notasPorDia.get(i).get(j).getValorTotalProducto();
+        for (List<Nota> notas : notasPorDia) {
+            for (int j = 0; j < notas.size(); j++) {
+                if (notas.get(j).numeroProducto == 1) {
+                    gananciasProducto1 += notas.get(j).getValorTotalProducto();
+                } else if (notas.get(j).numeroProducto == 2) {
+                    gananciasProducto2 += notas.get(j).getValorTotalProducto();
+                } else if (notas.get(j).numeroProducto == 3) {
+                    gananciasProducto3 += notas.get(j).getValorTotalProducto();
+                } else if (notas.get(j).numeroProducto == 4) {
+                    gananciasProducto4 += notas.get(j).getValorTotalProducto();
+                } else if (notas.get(j).numeroProducto == 5) {
+                    gananciasProducto5 += notas.get(j).getValorTotalProducto();
                 }
             }
         }
 
-        return Arrays.asList(gananciasProducto1, gananciasProducto2, gananciasProducto3, gananciasProducto4, gananciasProducto5);
+        List<Integer> gananciaPorProducto = new ArrayList<>(); // Si se crea un Arrays.asList no se puede mutar, hay que sí o sí crear una lista y agregar los valores a mano.
+        gananciaPorProducto.add(gananciasProducto1);
+        gananciaPorProducto.add(gananciasProducto2);
+        gananciaPorProducto.add(gananciasProducto3);
+        gananciaPorProducto.add(gananciasProducto4);
+        gananciaPorProducto.add(gananciasProducto5);
+        return gananciaPorProducto;
     }
 }
 

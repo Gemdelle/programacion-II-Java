@@ -34,7 +34,7 @@ public class Main {
 
         // Crear mercado
         Mercado mercado = new Mercado();
-        List<List<Integer>> gananciasTotales = mercado.gananciasTotalesPorMes(vendedor1,vendedor2,vendedor3,vendedor4);
+        List<List<String>> gananciasTotales = mercado.gananciasTotalesPorMes(vendedor1,vendedor2,vendedor3,vendedor4);
         mercado.impresionGanancias(gananciasTotales);
     }
 }

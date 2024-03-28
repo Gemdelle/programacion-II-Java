@@ -21,6 +21,26 @@ Access
 
 -------------------------------------------------------------------------------------------------------------
 
+AGREGAR ELEMENTOS A LISTAS
+
+01. Lista normal
+List<String> nombreLista
+- Agregar 1 solo elemento > add
+nombreLista.add("Ola");
+
+- Agregar varios elementos > addAll 
+nombreLista.addAll(Arrays.asList("Ola","Gemy","Hunny")); -> El Arrays.asList NO se puede mutar si está solo. Si lo uso para agregar a otra lista y ésta es un new ArrayList, sí.
+
+02. Lista de listas
+List<List<String>>
+- Agregar 1 solo elemento > add
+nombreLista.add(Arrays.asList("Ola")); -> Arrays.asList se necesita SÍ O SÍ porque sino ese elemento NO es una lista.
+
+- Agregar varios elementos > addAll 
+nombreLista.addAll(Arrays.asList("Ola","Gemy","Hunny")); -> lista final = <("Ola","Gemy","Hunny") -> esa lista es el único elemento, index 0.
+
+-------------------------------------------------------------------------------------------------------------
+
 ARRAYS
 int vec [] = new int [10]; 
 Esta primera parte es en tiempo de compilación.
@@ -68,3 +88,4 @@ EJERCICIO DVD
 Para crear la lista, en clase pusimos
 ArrayList <Alumno> curso = new ArrayList <Alumno>();
 curso.size() -> tamaño USADO, no es tamaño DISPONIBLE ya que las listas no se declaran con el tamaño final que van a tener.
+
