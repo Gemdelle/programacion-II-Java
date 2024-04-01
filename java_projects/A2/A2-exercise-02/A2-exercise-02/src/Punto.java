@@ -1,7 +1,7 @@
 public class Punto {
 //    01. ATTRIBUTES
-    private int x;
-    private int y;
+    public int x;
+    public int y;
 
 //    02. CONSTRUCTOR
     public Punto(int x, int y) {
