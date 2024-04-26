@@ -22,6 +22,5 @@ public class Main {
         CuentaDeAhorros.modificarTasaInteres(0.05F);
     ahorrador1.calcularlnteresMensual(1);
     ahorrador2.calcularlnteresMensual(1);
-
     }
 }
